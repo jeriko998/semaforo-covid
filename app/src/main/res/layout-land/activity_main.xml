@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView_consejo5_land"
+        android:layout_width="203dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:fontFamily="@font/brawler"
+        android:text="@string/texto_consejo4"
+        android:textSize="17sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_consejo2_land" />
+
+    <ImageView
+        android:id="@+id/img_edificio_land"
+        android:layout_width="46dp"
+        android:layout_height="130dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:contentDescription="@string/cont_edificio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView_consejo5_land"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.551"
+        app:srcCompat="@drawable/edificio" />
+
+    <ImageView
+        android:id="@+id/img_gel_land"
+        android:layout_width="83dp"
+        android:layout_height="116dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:contentDescription="@string/cont_gel_antibacterial_png"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_consejo3_land"
+        app:layout_constraintEnd_toStartOf="@+id/textView_consejo3_land"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_consejo3_land"
+        app:layout_constraintVertical_bias="0.644"
+        app:srcCompat="@drawable/gel_antibac" />
+
+    <TextView
+        android:id="@+id/textView_consejo3_land"
+        android:layout_width="214dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="388dp"
+        android:layout_marginRight="388dp"
+        android:fontFamily="@font/brawler"
+        android:text="@string/texto_consejo_gel"
+        android:textSize="17sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_consejo1_land"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView_consejo2_land"
+        android:layout_width="208dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="104dp"
+        android:fontFamily="@font/brawler"
+        android:text="@string/textView_consejo1"
+        android:textSize="17sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cons_layout_toolbar" />
+
+    <TextView
+        android:id="@+id/textView_consejoTit_land"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/brawler"
+        android:text="@string/titulo_consejos"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cons_layout_toolbar"
+        app:layout_constraintVertical_bias="0.156" />
+
+    <ImageView
+        android:id="@+id/img_manos_land"
+        android:layout_width="80dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:contentDescription="@string/icono_manos"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_consejo1_land"
+        app:layout_constraintEnd_toStartOf="@+id/textView_consejo1_land"
+        app:layout_constraintHorizontal_bias="0.656"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_consejo1_land"
+        app:layout_constraintVertical_bias="0.618"
+        app:srcCompat="@drawable/lava_manos" />
+
+    <TextView
+        android:id="@+id/textView_consejo1_land"
+        android:layout_width="210dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="104dp"
+        android:fontFamily="@font/brawler"
+        android:text="@string/texto_consejo2"
+        android:textSize="17sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cons_layout_toolbar" />
+
+    <ImageView
+        android:id="@+id/img_mask_land"
+        android:layout_width="80dp"
+        android:layout_height="107dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:contentDescription="@string/cont_icono_cubre_bocas"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_consejo2_land"
+        app:layout_constraintEnd_toStartOf="@+id/textView_consejo2_land"
+        app:layout_constraintTop_toTopOf="@+id/textView_consejo2_land"
+        app:layout_constraintVertical_bias="0.735"
+        app:srcCompat="@drawable/cubrebocas" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/call_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:contentDescription="@string/btn_telefono"
+        android:focusable="true"
+        android:onClick="llamarNumero"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/stat_sys_phone_call" />
+
+    <TextView
+        android:id="@+id/numero_a_llamar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:text="@string/telefono_covid"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/call_button" />
+
+    <TextView
+        android:id="@+id/textView_linea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/linea_covid_19"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/numero_a_llamar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons_layout_toolbar"
+        android:layout_width="729dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="366dp"
+        android:background="#03FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#EE55AEEA"
+            android:contentDescription="@string/logo_maps"
+            android:onClick="abrirClaseMapa"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_dialog_map" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginLeft="240dp"
+        android:background="#686868"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/cons_layout_toolbar"
+        app:layout_constraintStart_toStartOf="@+id/cons_layout_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/cons_layout_toolbar" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="240dp"
+        android:layout_marginRight="240dp"
+        android:background="#686868"
+        app:layout_constraintBottom_toBottomOf="@+id/cons_layout_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/cons_layout_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/cons_layout_toolbar" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="44dp"
+        android:background="#686868"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cons_layout_toolbar"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/layer"
+        android:layout_width="159dp"
+        android:layout_height="117dp"
+        android:layout_marginEnd="731dp"
+        android:layout_marginRight="731dp"
+        android:layout_marginBottom="411dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="731dp"
+        android:layout_marginRight="731dp"
+        android:layout_marginBottom="411dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="731dp"
+        android:layout_marginRight="731dp"
+        android:layout_marginBottom="411dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="-50dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="-116dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_begin="365dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="-296dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="-215dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="78dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:contentDescription="@string/cont_circulo_rojo"
+        app:layout_constraintBottom_toBottomOf="@+id/img_edificio_land"
+        app:layout_constraintEnd_toStartOf="@+id/textView_consejo5_land"
+        app:layout_constraintTop_toTopOf="@+id/img_edificio_land"
+        app:srcCompat="@drawable/tacherojo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

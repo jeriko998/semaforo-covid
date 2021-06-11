@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">GPS semaforo COVID</string>
+    <string name="btn_telefono">btn_telefono</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="location_permission_denied">permiso denegado</string>
+    <string name="logo_maps">logo_maps</string>
+    <string name="linea_covid_19">Linea COVID-19</string>
+    <string name="telefono_covid">0800-110124</string>
+    <string name="textView_consejo1">Lava manos con abundante agua y jabón</string>
+    <string name="titulo_consejos"><u>Consejos:</u></string>
+    <string name="icono_manos">icono_manos</string>
+    <string name="texto_consejo2">Usa cubre bocas en todo momento</string>
+    <string name="cont_icono_cubre_bocas">icono cubre bocas</string>
+    <string name="texto_consejo3">Use gel antibacterial</string>
+    <string name="cont_gel_atnibaterial">gel atnibaterial</string>
+    <string name="texto_consejo4">Procure no visitar lugares concurridos</string>
+    <string name="cont_edificio">edificio</string>
+    <string name="cont_gel_antibacterial_png">gel antibacterial png</string>
+    <string name="texto_consejo_gel">Use gel antibacterial</string>
+    <string name="cont_circulo_rojo">circulo rojo</string>
+    <string name="cont_textV_rojo">No salga a menos que sea necesario</string>
+    <string name="cont_textV_nivel_de_alerta"><u>Nivel de alerta:</u></string>
+    <string name="cont_txtV_circulo_ver">Podemos salir con precaucion</string>
+    <string name="img_circulo_verde">circulo verde</string>
+    <string name="cont_textV_naranja">De ser posible, permanece en casa</string>
+    <string name="cont_textV_amarillo">Mas actividades secundarias, con precaución</string>
+    <string name="cont_circulo_amarillo">circulo amarillo</string>
+    <string name="cont_circulo_naranja">circulo naranja</string>
+    <string name="cont_tache_rojo">tache rojo</string>
+    <string name="cont_img_flecha">flecha</string>
+    <string name="api_key">AIzaSyBhi6cnZeEFsjV746_d2gRPi-T-fszP1Ts</string>
+
+</resources>
