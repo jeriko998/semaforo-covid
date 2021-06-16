@@ -113,7 +113,7 @@ public class MapsActivity_fragment extends FragmentActivity implements OnMapRead
                         new LatLng(19.373607209173738, -99.1922691528337),new LatLng(19.369234739588197, -99.19192583008892),
                         new LatLng(19.367129434614338, -99.19098169254072),new LatLng(19.36356654886595, -99.19098169254072)
                         ));
-        poligonoBenJu.setTag("Benmito Juarez");
+        poligonoBenJu.setTag("Benito Juarez");
     }
 
     public void regresarMain(View view) {
