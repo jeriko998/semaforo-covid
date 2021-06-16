@@ -48,7 +48,7 @@ public class MapsActivity_fragment extends FragmentActivity implements OnMapRead
         mMap.moveCamera(CameraUpdateFactory.newLatLng(cdmx));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cdmx, 9));
 
-        Polygon poligono1 = googleMap.addPolygon(new PolygonOptions()
+        Polygon poligonoAO = googleMap.addPolygon(new PolygonOptions()
                 .clickable(true)
                 .add(
                         new LatLng(19.232728, -99.322420), new LatLng(19.232809, -99.324394), new LatLng(19.264898, -99.323622),
@@ -77,7 +77,24 @@ public class MapsActivity_fragment extends FragmentActivity implements OnMapRead
                         new LatLng(19.256432755795792, -99.31557803214753), new LatLng(19.244196976143325, -99.31806712191354),
                         new LatLng(19.23949689736852, -99.32330279384857), new LatLng(19.23301380977419, -99.32278780975905),
                         new LatLng(19.232728, -99.322420)));
-        poligono1.setTag("alvaro");
+        poligonoAO.setTag("Alvaro Obregón");
+
+        Polygon poligonoAzca = googleMap.addPolygon(new PolygonOptions()
+                .clickable(true)
+                .add(
+                        new LatLng(19.475100795302353, -99.22109556568195),new LatLng(19.47129751020387, -99.20684767177292),
+                        new LatLng(19.47340146614661, -99.20105410035544),new LatLng(19.47040736672058, -99.19041109526678),
+                        new LatLng(19.464661777774985, -99.19058275663917),new LatLng(19.46385252353364, -99.18800783605322),
+                        new LatLng(19.461020101878866, -99.188351158798),new LatLng(19.456407194867918, -99.16371775099338),
+                        new LatLng(19.459239697097594, -99.16320276687621),new LatLng(19.460858247587883, -99.16105699972124),
+                        new LatLng(19.4641762255844, -99.15925455531107),new LatLng(19.462962339072032, -99.15084314806357),
+                        new LatLng(19.46506640325027, -99.14311838630566),new LatLng(19.50269216783832, -99.15702295746989),
+                        new LatLng(19.50835550411632, -99.17298746510288),new LatLng(19.50625200236078, -99.17710733804041),
+                        new LatLng(19.50819369780927, -99.18440294654273),new LatLng(19.50964995368547, -99.18775034330446),
+                        new LatLng(19.51110619644783, -99.1920418776144),new LatLng(19.514665845765244, -99.20414400436844),
+                        new LatLng(19.512562426095524, -99.20920801485418),new LatLng(19.475100795302353, -99.22109556568195)
+                        ));
+        poligonoAzca.setTag("Azcapotzalco");
     }
 
     public void regresarMain(View view) {
