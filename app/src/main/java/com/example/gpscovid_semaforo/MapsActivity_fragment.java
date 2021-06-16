@@ -21,7 +21,7 @@ public class MapsActivity_fragment extends FragmentActivity implements OnMapRead
     private String LOG_TAG;
     private GoogleMap mMap;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
-    private boolean permisoDenegado = false;
+    private final boolean permisoDenegado = false;
 
 
     @Override
