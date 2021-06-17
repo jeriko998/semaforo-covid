@@ -16,6 +16,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 
+import java.util.ArrayList;
+
 public class MapsActivity_fragment extends FragmentActivity implements OnMapReadyCallback {
 
     private String LOG_TAG;
@@ -262,11 +264,30 @@ public class MapsActivity_fragment extends FragmentActivity implements OnMapRead
                         new LatLng(19.448525458081416, -99.05284817648804),new LatLng(19.4504678453366, -99.0511315630238)
                 ));
         poligonoGusAM.setTag("Gustavo A. Madero");
+
+        Polygon poligonoIzta = googleMap.addPolygon(new PolygonOptions()
+                .clickable(true)
+                .add(
+                        new LatLng(19.422199387758308, -99.05597243259993),new LatLng(19.421066134257934, -99.05760321563771),
+                        new LatLng(19.420661398949715, -99.06884703552974),new LatLng(19.420013820359962, -99.06987700376415),
+                        new LatLng(19.407061706782617, -99.07811674963924),new LatLng(19.40689979883378, -99.07966170199082),
+                        new LatLng(19.409166495449327, -99.09760031540637),new LatLng(19.405442620063365, -99.11450896115241),
+                        new LatLng(19.40552357478322, -99.11888632614856),new LatLng(19.403094915693774, -99.13030180800975),
+                        new LatLng(19.403337783237777, -99.13648161741607),new LatLng(19.39945185902386, -99.13716826290566),
+                        new LatLng(19.39912802781645, -99.13081679212694),new LatLng(19.397185027037594, -99.13081679212694),
+                        new LatLng(19.377429868735167, -99.13545164922041),new LatLng(19.377510837387906, -99.13442168098602),
+                        new LatLng(19.375810487229376, -99.12274870766298),new LatLng(19.382530815255507, -99.12266287697678),
+                        new LatLng(19.379777943325, -99.09571204151034),new LatLng(19.390465303554983, -99.0889314168474),
+                        new LatLng(19.3902224167985, -99.08652815763384),new LatLng(19.389736642198354, -99.08446822116505),
+                        new LatLng(19.392732229139263, -99.08403906773407),new LatLng(19.38374530287822, -99.06661543802572),
+                        new LatLng(19.38277371357901, -99.0609506127366),new LatLng(19.396375436475935, -99.0587190147223),
+                        new LatLng(19.422199387758308, -99.05597243259993)
+                ));
+        poligonoIzta.setTag("Iztacalco");
     }
 
     public void regresarMain(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
 }
