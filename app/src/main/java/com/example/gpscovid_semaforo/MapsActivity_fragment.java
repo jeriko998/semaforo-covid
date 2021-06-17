@@ -39,10 +39,13 @@ public class MapsActivity_fragment extends FragmentActivity implements OnMapRead
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
         // Agregar marcador de la CDMX
         LatLng cdmx = new LatLng(19.4978, -99.1269);
+
         //agregar marcador a "cdmx"
         mMap.addMarker(new MarkerOptions().position(cdmx).title(" "));
+
         //mover pocision de la camara a "cdmx"
         mMap.moveCamera(CameraUpdateFactory.newLatLng(cdmx));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cdmx, 9));
@@ -199,6 +202,27 @@ public class MapsActivity_fragment extends FragmentActivity implements OnMapRead
                         new LatLng(19.232975297792976, -99.32454396817919)
                 ));
         poligonoCuajim.setTag("Cuajimalpa de Morelos");
+
+        //Poligono de la delegación Cuauhtemoc
+        Polygon poligonoCuauh = googleMap.addPolygon(new PolygonOptions()
+                .clickable(true)
+                .add(
+                        new LatLng(19.3999382270125, -99.1704392552874),new LatLng(19.403986050619583, -99.15704966824038),
+                        new LatLng(19.40366222843749, -99.13782359453184),new LatLng(19.403014582139416, -99.13009883277395),
+                        new LatLng(19.40447178268402, -99.12597895983642),new LatLng(19.408519493477026, -99.12666560532601),
+                        new LatLng(19.413538514942868, -99.12821055767759),new LatLng(19.420014442724273, -99.127523912188),
+                        new LatLng(19.42422365741417, -99.1256356370916),new LatLng(19.442516285255554, -99.12323237812403),
+                        new LatLng(19.44785799121726, -99.1261506214548),new LatLng(19.459188300508853, -99.12254573263445),
+                        new LatLng(19.461616120955416, -99.12855388066836),new LatLng(19.465015008508512, -99.13387538321268),
+                        new LatLng(19.465824256946924, -99.14194346771538),new LatLng(19.463072795774675, -99.15069819770768),
+                        new LatLng(19.464043905050048, -99.15807963672077),new LatLng(19.46339649951277, -99.15979625044476),
+                        new LatLng(19.45967386750614, -99.1625428324031),new LatLng(19.456436726728807, -99.1639161233823),
+                        new LatLng(19.443973131590422, -99.16563273710626),new LatLng(19.42389987581672, -99.1774773718017),
+                        new LatLng(19.423090418308085, -99.17507411258813),new LatLng(19.421147703835526, -99.17627574219492),
+                        new LatLng(19.419528757367363, -99.1776490331741),new LatLng(19.40803377377782, -99.18417216532521),
+                        new LatLng(19.403176494232618, -99.1709542396506),new LatLng(19.3999382270125, -99.1704392552874)
+                ));
+        poligonoCuauh.setTag("Cuauhtemoc");
     }
 
     public void regresarMain(View view) {
