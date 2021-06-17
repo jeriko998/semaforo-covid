@@ -22,6 +22,11 @@ import com.google.android.gms.maps.model.PolygonOptions;
 
 import static androidx.constraintlayout.motion.widget.Debug.getLocation;
 
+/**
+ *     Contraseña de la llave: semaforocovid
+ *     Nombre de la llave my-key.jks
+ */
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
     private String LOG_TAG;
     private GoogleMap mMap;

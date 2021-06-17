@@ -16,15 +16,11 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 
-import java.util.ArrayList;
-
 public class MapsActivity_fragment extends FragmentActivity implements OnMapReadyCallback {
 
-    private String LOG_TAG;
+    public String LOG_TAG;
     private GoogleMap mMap;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
-    private final boolean permisoDenegado = false;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
