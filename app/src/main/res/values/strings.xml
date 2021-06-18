@@ -29,5 +29,6 @@
     <string name="cont_tache_rojo">tache rojo</string>
     <string name="cont_img_flecha">flecha</string>
     <string name="api_key">AIzaSyCxmBtTtxNaAkWNB47aBCI-IrlAQeQogqw</string>
+    <string name="botonubicacion">botonUbicacion</string>
 
 </resources>

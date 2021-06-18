@@ -1,45 +1,29 @@
 package com.example.gpscovid_semaforo;
 
 import android.os.Bundle;
-import android.util.Log;
-
-import androidx.fragment.app.FragmentActivity;
-
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+import android.annotation.SuppressLint;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-    private String LOG_TAG;
-    private GoogleMap mMap;
+
+public class MapsActivity extends AppCompatActivity implements        OnMapReadyCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+        setContentView(R.layout.activity_maps_fragment);
+
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        Log.d(LOG_TAG,"error");
-        Log.i(LOG_TAG,"error");
-
+        getSupportActionBar();
     }
 
+    @SuppressLint("MissingPermission")
     @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+    public void onMapReady(GoogleMap map) {
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions()
-                .position(sydney)
-                .title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
-
-
 }
