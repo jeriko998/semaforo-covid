@@ -126,21 +126,17 @@ public class MapsActivity_fragment extends AppCompatActivity implements OnMapRea
             layerTlalpan.addLayerToMap();
             layerVC.addLayerToMap();
             layerXo.addLayerToMap();
+            layerBJ.addLayerToMap();
 
 
 
         } catch (IOException e) {
-            //e.printStackTrace();
-        } catch (JSONException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
+        } catch (JSONException e1) {
+            e1.printStackTrace();
         }
 
 
-    }
-
-    public void regresarMain(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
     }
 
     @Override
