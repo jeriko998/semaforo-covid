@@ -86,16 +86,27 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
+    /*  Metodo para obtencion multiple de permisos
+    * */
+
     private  boolean checkAndRequestPermissions() {
+        int permisoUbicacion_Segundoplano = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_BACKGROUND_LOCATION);
         int permisoUbicacion = ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_COARSE_LOCATION);
-        int permisoLlamadas = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
+                Manifest.permission.ACCESS_FINE_LOCATION);
+        int permisoLlamadas = ContextCompat.checkSelfPermission(this
+                , Manifest.permission.CALL_PHONE);
+
         List<String> listPermissionsNeeded = new ArrayList<>();
+
         if (permisoUbicacion != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.ACCESS_COARSE_LOCATION);
+            listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION);
         }
         if (permisoLlamadas != PackageManager.PERMISSION_GRANTED) {
             listPermissionsNeeded.add(Manifest.permission.CALL_PHONE);
+        }
+        if(permisoUbicacion_Segundoplano != PackageManager.PERMISSION_GRANTED);{
+            listPermissionsNeeded.add(Manifest.permission.ACCESS_BACKGROUND_LOCATION);
         }
         if (!listPermissionsNeeded.isEmpty()) {
             ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]),REQUEST_ID_MULTIPLE_PERMISSIONS);
@@ -105,10 +116,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void disableCallButton() {
-        FloatingActionButton fab = findViewById(R.id.call_button);
-        fab.setEnabled(false);
+        if (ContextCompat.checkSelfPermission(this
+                , Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED) {
+            FloatingActionButton fab = findViewById(R.id.call_button);
+            fab.setEnabled(false);
+        }
     }
-
     public void abrirClaseMapa(View view) {
         Log.d(LOG_TAG, "Boton presionado");
         startActivity(new Intent(MainActivity.this,MapsActivity_fragment.class));
