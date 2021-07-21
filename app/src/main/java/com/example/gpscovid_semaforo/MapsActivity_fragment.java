@@ -32,6 +32,7 @@ public class MapsActivity_fragment extends AppCompatActivity implements OnMapRea
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps_fragment);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -147,7 +148,7 @@ public class MapsActivity_fragment extends AppCompatActivity implements OnMapRea
 
     @Override
     public boolean onMyLocationButtonClick() {
-        Toast.makeText(this, "MyLocation button clicked", Toast.LENGTH_SHORT)
+        Toast.makeText(this, " ", Toast.LENGTH_SHORT)
                 .show();
         // Return false so that we don't consume the event and the default behavior still occurs
         // (the camera animates to the user's current position).

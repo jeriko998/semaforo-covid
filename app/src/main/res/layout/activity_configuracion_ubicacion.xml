@@ -6,4 +6,120 @@
     android:layout_height="match_parent"
     tools:context=".ConfiguracionUbicacion">
 
+    <Switch
+        android:id="@+id/sw_actualizacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/brawler"
+        android:text="Actualizaciónes de ubicacion"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label_actualizacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/brawler"
+        android:text="@string/actualizaciones"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_actualizacion" />
+
+    <Switch
+        android:id="@+id/sw_sensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/brawler"
+        android:text="GPS/Ahorro de bateria"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_actualizacion" />
+
+    <TextView
+        android:id="@+id/txtview_actualizacion"
+        android:layout_width="241dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/brawler"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/sw_sensor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toEndOf="@+id/label_actualizacion"
+        app:layout_constraintTop_toBottomOf="@+id/sw_actualizacion"
+        app:layout_constraintVertical_bias="0.076" />
+
+    <TextView
+        android:id="@+id/label_sensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/brawler"
+        android:text="Sensor: "
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_sensor" />
+
+    <TextView
+        android:id="@+id/txtview_sensor"
+        android:layout_width="192dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintStart_toEndOf="@+id/label_sensor"
+        app:layout_constraintTop_toBottomOf="@+id/sw_sensor" />
+
+    <TextView
+        android:id="@+id/label_latitud"
+        android:layout_width="74dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="28dp"
+        android:text="Lat: "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_sensor" />
+
+    <TextView
+        android:id="@+id/label_long"
+        android:layout_width="75dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="24dp"
+        android:text="Long"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_latitud" />
+
+    <TextView
+        android:id="@+id/txtview_latitud"
+        android:layout_width="160dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="10dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/label_latitud"
+        app:layout_constraintTop_toTopOf="@+id/label_latitud" />
+
+    <TextView
+        android:id="@+id/txtview_longitud"
+        android:layout_width="154dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/label_long"
+        app:layout_constraintTop_toBottomOf="@+id/label_latitud" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

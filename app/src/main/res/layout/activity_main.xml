@@ -77,6 +77,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_dialog_map" />
+
+        <ImageButton
+            android:id="@+id/settingsButton"
+            android:layout_width="48dp"
+            android:layout_height="43dp"
+            android:onClick="abrirConfiguracion"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.792"
+            app:layout_constraintStart_toEndOf="@+id/img_maps"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_settings"
+            tools:ignore="VectorDrawableCompat" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
@@ -133,10 +146,10 @@
         android:contentDescription="@string/icono_manos"
         app:layout_constraintBottom_toBottomOf="@+id/textView_consejo1"
         app:layout_constraintEnd_toStartOf="@+id/textView_consejo1"
-        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView_consejo1"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.764"
         app:srcCompat="@drawable/lava_manos" />
 
     <TextView
@@ -196,14 +209,13 @@
         android:layout_width="79dp"
         android:layout_height="103dp"
         android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
         android:contentDescription="@string/cont_gel_atnibaterial"
         app:layout_constraintBottom_toBottomOf="@+id/textView_consejo3"
         app:layout_constraintEnd_toStartOf="@+id/textView_consejo3"
         app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView_consejo3"
-        app:layout_constraintVertical_bias="0.587"
+        app:layout_constraintVertical_bias="0.571"
         app:srcCompat="@drawable/gel_antibac" />
 
     <TextView
@@ -223,32 +235,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_consejo2"
         app:layout_constraintVertical_bias="0.009" />
 
-    <TextView
-        android:id="@+id/textView_consejo4"
-        android:layout_width="203dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="280dp"
-        android:fontFamily="@font/brawler"
-        android:text="@string/texto_consejo4"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.831"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_consejo3"
-        app:layout_constraintVertical_bias="0.0" />
-
     <ImageView
         android:id="@+id/img_edificio_h"
         android:layout_width="46dp"
         android:layout_height="130dp"
         android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
         android:contentDescription="@string/cont_edificio"
         app:layout_constraintBottom_toBottomOf="@+id/textView_consejo4"
+        app:layout_constraintEnd_toStartOf="@+id/textView_consejo4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView_consejo4"
         app:srcCompat="@drawable/edificio" />
@@ -259,10 +254,24 @@
         android:layout_height="80dp"
         android:contentDescription="@string/cont_tache_rojo"
         app:layout_constraintBottom_toBottomOf="@+id/img_edificio_h"
-        app:layout_constraintEnd_toStartOf="@+id/textView_consejo4"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/img_edificio_h"
         app:layout_constraintTop_toTopOf="@+id/img_edificio_h"
         app:srcCompat="@drawable/tacherojo" />
+
+    <TextView
+        android:id="@+id/textView_consejo4"
+        android:layout_width="203dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="28dp"
+        android:contentDescription="@string/descripsion_imagen_edificio"
+        android:fontFamily="@font/brawler"
+        android:text="@string/textView_consejo4"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_consejo3"
+        app:layout_constraintVertical_bias="0.094" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

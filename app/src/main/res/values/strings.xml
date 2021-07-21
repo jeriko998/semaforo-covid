@@ -30,5 +30,7 @@
     <string name="cont_img_flecha">flecha</string>
     <string name="api_key">AIzaSyCxmBtTtxNaAkWNB47aBCI-IrlAQeQogqw</string>
     <string name="botonubicacion">botonUbicacion</string>
-
+    <string name="textView_consejo4">Procure no visitar lugares concurridos</string>
+    <string name="descripsion_imagen_edificio">descripsion imagen edificio</string>
+    <string name="actualizaciones">Actualizaciones:</string>
 </resources>

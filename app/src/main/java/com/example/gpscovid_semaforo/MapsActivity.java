@@ -8,7 +8,7 @@ import android.annotation.SuppressLint;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class MapsActivity extends AppCompatActivity implements        OnMapReadyCallback {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
