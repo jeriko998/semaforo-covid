@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
@@ -30,6 +31,7 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
 
     TextView txtview_actualizacion, txtview_sensor, txtview_latitud, txtview_longitud;
     Switch sw_actualizacion, sw_sensor;
+
     //API para servicios de localizacion
     FusedLocationProviderClient fusedLocationProviderClient;
 
@@ -42,6 +44,7 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion_ubicacion);
+        actualizarGPS();
         sw_actualizacion = findViewById(R.id.sw_actualizacion);
         sw_sensor = findViewById(R.id.sw_sensor);
         txtview_actualizacion = findViewById(R.id.txtview_actualizacion);
@@ -54,6 +57,7 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
         locationRequest.setFastestInterval(1000 * INTERVALO_ACTUALIZACION_RAPIDO);
         locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
 
+        //Evento que se activa cada que se alcanza el intervalo de actualizacion
         locationCallback = new LocationCallback() {
 
             @Override
@@ -63,7 +67,12 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
             }
         };
 
-        txtview_sensor.setText("Torres de teléfono + Wifi");
+        SharedPreferences sharedPrefs = getSharedPreferences("com.example.xyle", MODE_PRIVATE);
+        sw_actualizacion.setChecked(sharedPrefs.getBoolean("Switch de intervalo", true));
+        sw_sensor.setChecked(sharedPrefs.getBoolean("Switch de gps", true));
+
+
+        txtview_sensor.setText("Sensores GPS");
         //switch del tipo de sensor
         sw_sensor.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -72,16 +81,21 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
                     locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
                     txtview_sensor.setText("Sensores GPS");
                     Log.d(LOG_TAG, "switch cambiado a sensores GPS");
+                    SharedPreferences.Editor editor = getSharedPreferences("com.example.xyz", MODE_PRIVATE).edit();
+                    editor.putBoolean("Switch de gps", true);
+                    editor.commit();
                 } else {
                     locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
                     txtview_sensor.setText("Torres de telefono + Wifi");
+                    SharedPreferences.Editor editor = getSharedPreferences("com.example.xyz", MODE_PRIVATE).edit();
+                    editor.putBoolean("Switch de torres", false);
+                    editor.commit();
                     Log.d(LOG_TAG, "switch cambiado a torres y wifi");
                 }
             }
         });
 
-        txtview_actualizacion.setText("Actualizacion de ubicacion para" +
-                " cambios de ubicacion respecto a alcaldias");
+        txtview_actualizacion.setText("Actualizacion de ubicacion para cambios respecto a alcaldias");
         sw_actualizacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,7 +110,7 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
     }//fin del metodo onCreate
 
     private void iniciarActualizacionUbicacion() {
-        txtview_actualizacion.setText("Actualizacion de ubicacion respecto a  alcaldias");
+        txtview_actualizacion.setText("Actualizacion de ubicacion para cambios respecto a alcaldias");
 
         if (ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
@@ -148,6 +162,4 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
         txtview_latitud.setText(String.valueOf(location.getLatitude()));
         txtview_longitud.setText(String.valueOf(location.getLongitude()));
     }
-
-
 }

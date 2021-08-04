@@ -1,3 +1,3 @@
 from urllib.request import urlopen
-html = urlopen("https://datos.covid-19.conacyt.mx/fHDMap/mun.php")
+html = urlopen("https://www.camwhores.tv/videos/7050866/caylin-in-red/")
 print(html.read())

@@ -154,5 +154,4 @@ public class MapsActivity_fragment extends AppCompatActivity implements OnMapRea
         // (the camera animates to the user's current position).
         return false;
     }
-
 }

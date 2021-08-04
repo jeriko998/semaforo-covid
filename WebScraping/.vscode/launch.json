@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Listen for XDebug",
+            "type": "php",
+            "request": "launch",
+            "url": "http://localhost:8080/PHP-POO/index.php"
+            
+        },
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
