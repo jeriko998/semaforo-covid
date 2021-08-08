@@ -1,26 +1,35 @@
 package com.example.gpscovid_semaforo;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
+import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationSettingsRequest;
+import com.google.android.gms.location.LocationSettingsResponse;
+import com.google.android.gms.location.SettingsClient;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 
 public class ConfiguracionUbicacion extends AppCompatActivity {
 
@@ -28,17 +37,15 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
     public static final int INTERVALO_ACTUALIZACION_RAPIDO = 5;
     public static final int PERMISSION_FINE_LOCATION = 1;
     public String LOG_TAG;
-
     TextView txtview_actualizacion, txtview_sensor, txtview_latitud, txtview_longitud;
     Switch sw_actualizacion, sw_sensor;
-
     //API para servicios de localizacion
-    FusedLocationProviderClient fusedLocationProviderClient;
-
+    FusedLocationProviderClient fusedLocationClient;
     boolean updateOn = false;
-
     LocationRequest locationRequest;
     private LocationCallback locationCallback;
+    protected static final int REQUEST_CHECK_SETTINGS = 0x1;
+    Task<LocationSettingsResponse> task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,19 +59,14 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
         txtview_longitud = findViewById(R.id.txtview_longitud);
         txtview_latitud = findViewById(R.id.txtview_latitud);
 
-        locationRequest = new LocationRequest();
-        locationRequest.setInterval(1000 * INTERVALO_ACTUALIZACION_PREDETERMINADO);
-        locationRequest.setFastestInterval(1000 * INTERVALO_ACTUALIZACION_RAPIDO);
-        locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+        requestUbicacion();
 
         //Evento que se activa cada que se alcanza el intervalo de actualizacion
         locationCallback = new LocationCallback() {
-
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 super.onLocationResult(locationResult);
-                actualizarValoresUI(locationResult.getLastLocation());
-            }
+                actualizarValoresUI(locationResult.getLastLocation());}
         };
 
         SharedPreferences sharedPrefs = getSharedPreferences("com.example.xyle", MODE_PRIVATE);
@@ -83,13 +85,13 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
                     Log.d(LOG_TAG, "switch cambiado a sensores GPS");
                     SharedPreferences.Editor editor = getSharedPreferences("com.example.xyz", MODE_PRIVATE).edit();
                     editor.putBoolean("Switch de gps", true);
-                    editor.commit();
+                    editor.apply();
                 } else {
                     locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
                     txtview_sensor.setText("Torres de telefono + Wifi");
                     SharedPreferences.Editor editor = getSharedPreferences("com.example.xyz", MODE_PRIVATE).edit();
                     editor.putBoolean("Switch de torres", false);
-                    editor.commit();
+                    editor.apply();
                     Log.d(LOG_TAG, "switch cambiado a torres y wifi");
                 }
             }
@@ -107,7 +109,22 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
                 }
             }
         });
+
+        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
+                .addLocationRequest(locationRequest);
+
+        SettingsClient client = LocationServices.getSettingsClient(this);
+        task = client.checkLocationSettings(builder.build());
+        checkConfiguracion();
+
     }//fin del metodo onCreate
+
+    private void requestUbicacion() {
+        locationRequest = new LocationRequest();
+        locationRequest.setInterval(1000 * INTERVALO_ACTUALIZACION_PREDETERMINADO);
+        locationRequest.setFastestInterval(1000 * INTERVALO_ACTUALIZACION_RAPIDO);
+        locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+    }
 
     private void iniciarActualizacionUbicacion() {
         txtview_actualizacion.setText("Actualizacion de ubicacion para cambios respecto a alcaldias");
@@ -116,7 +133,7 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
                 Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, null);
+            fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, Looper.getMainLooper());
         }
 
     }
@@ -125,7 +142,7 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
         txtview_actualizacion.setText("Sin actualizaciones de ubicacion");
         txtview_longitud.setText("");
         txtview_latitud.setText("");
-        fusedLocationProviderClient.removeLocationUpdates(locationCallback);
+        fusedLocationClient.removeLocationUpdates(locationCallback);
     }
 
     @Override
@@ -146,10 +163,10 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
 
 
     public void actualizarGPS(){
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(ConfiguracionUbicacion.this);
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(ConfiguracionUbicacion.this);
         if(ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-            fusedLocationProviderClient.getLastLocation().addOnSuccessListener(this,
+            fusedLocationClient.getLastLocation().addOnSuccessListener(this,
                     location -> actualizarValoresUI(location));
         }else{
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
@@ -161,5 +178,55 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
     public void actualizarValoresUI(Location location){
         txtview_latitud.setText(String.valueOf(location.getLatitude()));
         txtview_longitud.setText(String.valueOf(location.getLongitude()));
+    }
+
+    public void checkConfiguracion(){
+        task.addOnSuccessListener(this, new OnSuccessListener<LocationSettingsResponse>() {
+            @Override
+            public void onSuccess(LocationSettingsResponse locationSettingsResponse) {
+                // All location settings are satisfied. The client can initialize
+                // location requests here.
+                // ...
+            }
+        });
+
+        task.addOnFailureListener(this, new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                if (e instanceof ResolvableApiException) {
+                    // Location settings are not satisfied, but this can be fixed
+                    // by showing the user a dialog.
+                    try {
+                        // Show the dialog by calling startResolutionForResult(),
+                        // and check the result in onActivityResult().
+                        ResolvableApiException resolvable = (ResolvableApiException) e;
+                        resolvable.startResolutionForResult(ConfiguracionUbicacion.this,
+                                REQUEST_CHECK_SETTINGS);
+                    } catch (IntentSender.SendIntentException sendEx) {
+                        // Ignore the error.
+                    }
+                }
+            }
+        });
+    }//fin del metodo checkConfiguracion
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        checkConfiguracion();
+        iniciarActualizacionUbicacion();
+        actualizarGPS();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        checkConfiguracion();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        detenerActualizacionUbicacion();
     }
 }

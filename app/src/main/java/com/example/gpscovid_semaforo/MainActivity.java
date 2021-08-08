@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public String LOG_TAG;
     private static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
     List<String> listPermissionsNeeded = new ArrayList<>();
-
+    ConfiguracionUbicacion conf = new ConfiguracionUbicacion();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         isTelephonyEnabled();
         checkAndRequestPermissions();
         notificationManagerCompat = NotificationManagerCompat.from(this);
+
     }
 
     @SuppressLint("QueryPermissionsNeeded")
@@ -139,5 +140,10 @@ public class MainActivity extends AppCompatActivity {
     public void abrirConfiguracion(View v){
         Log.d(LOG_TAG,"Configuracion abierta");
         startActivity(new Intent(MainActivity.this, ConfiguracionUbicacion.class));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }

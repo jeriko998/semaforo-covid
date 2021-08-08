@@ -2,7 +2,9 @@ package com.example.gpscovid_semaforo;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +18,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.maps.android.geojson.GeoJsonLayer;
 import com.google.maps.android.geojson.GeoJsonPolygonStyle;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONException;
 
@@ -43,6 +47,7 @@ public class MapsActivity_fragment extends AppCompatActivity implements OnMapRea
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -98,7 +103,8 @@ public class MapsActivity_fragment extends AppCompatActivity implements OnMapRea
             GeoJsonPolygonStyle pS_Xo=layerXo.getDefaultPolygonStyle();
 
             //Se añade el ancho del poligono
-            pS_AO.setStrokeWidth(3);
+            pS_AO.setFillColor(Color.RED);
+
             pS_Az.setStrokeWidth(3);
             pS_Co.setStrokeWidth(3);
             pS_CM.setStrokeWidth(3);
