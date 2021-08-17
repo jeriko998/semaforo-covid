@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "346821712042",
+    "project_id": "gpscovid-311518",
+    "storage_bucket": "gpscovid-311518.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346821712042:android:8cbb67745b78714b9098d3",
+        "android_client_info": {
+          "package_name": "com.example.gpscovid_semaforo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346821712042-oiimorjqceck4b76cnks21qqrgmip9fr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxZO7dSlzU4VJPE-zuwlHDNzpRIAukNEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346821712042-oiimorjqceck4b76cnks21qqrgmip9fr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

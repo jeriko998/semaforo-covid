@@ -1,6 +1,7 @@
 package com.example.gpscovid_semaforo;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -38,6 +39,7 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
     public static final int PERMISSION_FINE_LOCATION = 1;
     public String LOG_TAG;
     TextView txtview_actualizacion, txtview_sensor, txtview_latitud, txtview_longitud;
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     Switch sw_actualizacion, sw_sensor;
     //API para servicios de localizacion
     FusedLocationProviderClient fusedLocationClient;
@@ -126,7 +128,7 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
         locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
     }
 
-    private void iniciarActualizacionUbicacion() {
+    protected void iniciarActualizacionUbicacion() {
         txtview_actualizacion.setText("Actualizacion de ubicacion para cambios respecto a alcaldias");
 
         if (ActivityCompat.checkSelfPermission(this,
@@ -209,6 +211,8 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
             }
         });
     }//fin del metodo checkConfiguracion
+
+
 
     @Override
     protected void onResume() {

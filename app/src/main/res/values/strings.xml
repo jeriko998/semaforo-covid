@@ -33,4 +33,5 @@
     <string name="textView_consejo4">Procure no visitar lugares concurridos</string>
     <string name="descripsion_imagen_edificio">descripsion imagen edificio</string>
     <string name="actualizaciones">Actualizaciones:</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiamVyaWtrbyIsImEiOiJja3Njb3Jvb2UwaXk1MnhtczQ1bG1naTN5In0.1eefAv7StvF9RQ5gNAaAig</string>
 </resources>

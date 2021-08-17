@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -28,6 +30,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.example.gpscovid_semaforo.NotificacionAlerta.CHANNEL_1_ID;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class MainActivity extends AppCompatActivity {
@@ -49,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
         isTelephonyEnabled();
         checkAndRequestPermissions();
         notificationManagerCompat = NotificationManagerCompat.from(this);
-
     }
 
     @SuppressLint("QueryPermissionsNeeded")
@@ -119,10 +125,9 @@ public class MainActivity extends AppCompatActivity {
         fab.setEnabled(true);
     }
 
-
     public void abrirClaseMapa(View view) {
         Log.d(LOG_TAG, "Boton presionado");
-        startActivity(new Intent(MainActivity.this, MapsActivity_fragment.class));
+        startActivity(new Intent(MainActivity.this, MapBoxMap.class));
     }
 
     public void notificacionAlerta(View v) {
