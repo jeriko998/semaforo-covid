@@ -1,7 +1,6 @@
 package com.example.gpscovid_semaforo;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -39,7 +38,6 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
     public static final int PERMISSION_FINE_LOCATION = 1;
     public String LOG_TAG;
     TextView txtview_actualizacion, txtview_sensor, txtview_latitud, txtview_longitud;
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
     Switch sw_actualizacion, sw_sensor;
     //API para servicios de localizacion
     FusedLocationProviderClient fusedLocationClient;
@@ -148,7 +146,8 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         switch (requestCode){
@@ -156,7 +155,8 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
                 if(grantResults[0]==PackageManager.PERMISSION_GRANTED){
                     actualizarGPS();
                 }else{
-                    Toast.makeText(this,"La aplicacion requiere permiso de ubicacion para funcionar correctamente",
+                    Toast.makeText(this,"La aplicacion requiere permiso de ubicacion " +
+                                    "para funcionar correctamente",
                             Toast.LENGTH_SHORT).show();
                     finish();
                 }break;
@@ -172,7 +172,8 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
                     location -> actualizarValoresUI(location));
         }else{
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_FINE_LOCATION);
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        PERMISSION_FINE_LOCATION);
             }
         }
     }

@@ -54,4 +54,5 @@ dependencies {
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1'
     //dependencia para evitar crasheo de mapbox en android
     implementation 'com.mapbox.mapboxsdk:mapbox-android-telemetry:6.1.0'
+
 }

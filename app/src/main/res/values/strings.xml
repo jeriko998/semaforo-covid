@@ -34,4 +34,13 @@
     <string name="descripsion_imagen_edificio">descripsion imagen edificio</string>
     <string name="actualizaciones">Actualizaciones:</string>
     <string name="mapbox_access_token">pk.eyJ1IjoiamVyaWtrbyIsImEiOiJja3Njb3Jvb2UwaXk1MnhtczQ1bG1naTN5In0.1eefAv7StvF9RQ5gNAaAig</string>
+    <string name="user_location_permission_explanation">La app necesita permiso de ubicacion</string>
+    <string name="user_location_permission_not_granted" />
+    <string name="new_location">Location A </string>
+    <string name="latitud">Lat:</string>
+    <string name="longitud">Long</string>
+    <string name="gps_ahorro_de_bateria">GPS/Ahorro de bateria</string>
+    <string name="actualizaci_nes_de_ubicacion">Actualizaciónes de ubicacion</string>
+    <string name="sensor">Sensor:</string>
+
 </resources>

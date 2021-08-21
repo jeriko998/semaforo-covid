@@ -13,7 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/brawler"
-        android:text="Actualizaciónes de ubicacion"
+        android:minHeight="48dp"
+        android:text="@string/actualizaci_nes_de_ubicacion"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +31,7 @@
         android:layout_marginTop="15dp"
         android:fontFamily="@font/brawler"
         android:text="@string/actualizaciones"
+        android:textColor="#000000"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_actualizacion" />
@@ -38,7 +42,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:fontFamily="@font/brawler"
-        android:text="GPS/Ahorro de bateria"
+        android:minHeight="48dp"
+        android:text="@string/gps_ahorro_de_bateria"
+        android:textColor="#000000"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,17 +53,18 @@
 
     <TextView
         android:id="@+id/txtview_actualizacion"
-        android:layout_width="241dp"
-        android:layout_height="73dp"
+        android:layout_width="228dp"
+        android:layout_height="70dp"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/brawler"
+        android:textColor="#000000"
         android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/sw_sensor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toEndOf="@+id/label_actualizacion"
         app:layout_constraintTop_toBottomOf="@+id/sw_actualizacion"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintVertical_bias="0.294" />
 
     <TextView
         android:id="@+id/label_sensor"
@@ -65,7 +72,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/brawler"
-        android:text="Sensor: "
+        android:text="@string/sensor"
+        android:textColor="#000000"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.028"
@@ -77,6 +85,7 @@
         android:layout_width="192dp"
         android:layout_height="22dp"
         android:layout_marginTop="12dp"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.241"
         app:layout_constraintStart_toEndOf="@+id/label_sensor"
@@ -88,7 +97,8 @@
         android:layout_height="19dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="28dp"
-        android:text="Lat: "
+        android:text="@string/latitud"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +110,8 @@
         android:layout_height="19dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
-        android:text="Long"
+        android:text="@string/longitud"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,6 +123,7 @@
         android:layout_height="19dp"
         android:layout_marginStart="10dp"
         android:text="0"
+        android:textColor="#000000"
         app:layout_constraintStart_toEndOf="@+id/label_latitud"
         app:layout_constraintTop_toTopOf="@+id/label_latitud" />
 
@@ -122,6 +134,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:text="0"
+        android:textColor="#000000"
         app:layout_constraintStart_toEndOf="@+id/label_long"
         app:layout_constraintTop_toBottomOf="@+id/label_latitud" />
 

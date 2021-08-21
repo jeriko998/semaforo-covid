@@ -7,6 +7,11 @@ import android.graphics.Color;
 
 import androidx.annotation.NonNull;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mapbox.mapboxsdk.maps.Style;
 import com.mapbox.mapboxsdk.style.layers.FillLayer;
 import com.mapbox.mapboxsdk.style.layers.LineLayer;
@@ -18,6 +23,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class PoligonosMapa {
+
+
     // Variables de archivos GeoJSON con referencia
     public static final String GEOJSON_SOURCE_AO = "Alvaro obregon";
     private static final String GEOJSON_SOURCE_AZ = "Azcapotzalco";
@@ -35,8 +42,8 @@ public class PoligonosMapa {
     private static final String GEOJSON_SOURCE_Tlalpan = "Tlalpan";
     private static final String GEOJSON_SOURCE_VC = "Venustiano Carranza";
     private static final String GEOJSON_SOURCE_Xo = "Xochimilco";
-
-    protected int valor = 1;
+    int casos;
+    DatabaseReference databaseReference;
 
 
     protected void createGeoJsonSource(@NonNull Style loadedMapStyle) {
@@ -85,7 +92,7 @@ public class PoligonosMapa {
 
     // No cambiar los "layerid"
     protected void addAlvObLayer(@NonNull Style loadedMapStyle) {
-        FillLayer countryPolygonFillLayer = new FillLayer("polygon alvaro", GEOJSON_SOURCE_AO);
+                FillLayer countryPolygonFillLayer = new FillLayer("polygon alvaro", GEOJSON_SOURCE_AO);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
                 PropertyFactory.fillOpacity(.4f));
@@ -95,8 +102,7 @@ public class PoligonosMapa {
 
         loadedMapStyle.addLayer(new LineLayer("LineLayer Alvaro",GEOJSON_SOURCE_AO).withProperties(
                 PropertyFactory.lineWidth(.9f),
-                PropertyFactory.lineColor(Color.BLACK))
-        );
+                PropertyFactory.lineColor(Color.BLACK)));
     }
 
     protected void addAzcaLayer(@NonNull Style loadedMapStyle) {
@@ -107,18 +113,22 @@ public class PoligonosMapa {
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-        /*
-        if(valor==3){
-            countryPolygonFillLayer.setProperties(
-                    PropertyFactory.fillColor(Color.RED));
-        }else {
-            countryPolygonFillLayer.setProperties(
-                    PropertyFactory.fillColor(Color.GREEN));
-        }
-         */
-
 
         loadedMapStyle.addLayer(new LineLayer("linelayer Azcapo",GEOJSON_SOURCE_AZ).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }
+
+    protected void addAzcaLayerAmarillo(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon azcapo a", GEOJSON_SOURCE_AZ);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.YELLOW),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer Azcapo Amarillo",GEOJSON_SOURCE_AZ).withProperties(
                 PropertyFactory.lineWidth(.9f),
                 PropertyFactory.lineColor(Color.BLACK)));
     }
