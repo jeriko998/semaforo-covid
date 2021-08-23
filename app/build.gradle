@@ -28,6 +28,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -54,5 +57,7 @@ dependencies {
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1'
     //dependencia para evitar crasheo de mapbox en android
     implementation 'com.mapbox.mapboxsdk:mapbox-android-telemetry:6.1.0'
+    //GeoFire para real time database (rtdb)
+    implementation 'com.firebase:geofire-android:3.1.0'
 
 }

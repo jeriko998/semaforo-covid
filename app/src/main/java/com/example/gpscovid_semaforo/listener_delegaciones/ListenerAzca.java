@@ -22,24 +22,27 @@ public class ListenerAzca {
 
     public void ListenerAz(Style style){
         databaseReference = FirebaseDatabase.getInstance().getReference();
-        mDatosRef=databaseReference.child("ocupacion");
+        mDatosRef=databaseReference.child("ocupacion").child("ocu_azca");
         mDatosListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Float ocu_azca = Float.valueOf(snapshot.child("ocu_azca").getValue().toString());
+                float ocu_ccv = Float.parseFloat(snapshot.child("ocu_camas_c_venti").getValue().toString());
+                float ocu_chgral = Float.parseFloat(snapshot.child("ocu_camas_h_gral").getValue().toString());
+                float ocu_cvuci = Float.parseFloat(snapshot.child("ocu_camas_vent_uci").getValue().toString());
 
+                float resultado = (ocu_ccv+ocu_chgral+ocu_cvuci)/3;
                 if(snapshot.exists()){
 
-                    if(ocu_azca > 70){
+                    if(resultado > 70){
                         poligonosMapa.addAzcaLayerRojo(style);
                         Log.e(TAG_onDataChange,"layer rojo clase Condicional Azcapo");
-                    }else if((ocu_azca > 50) && (ocu_azca < 70)){
+                    }else if((resultado > 50) && (resultado < 70)){
                         poligonosMapa.addAzcaLayerAmarillo(style);
                         Log.e(TAG_onDataChange,"layer amarillo clase Condicional Azcapo");
-                    }else if((ocu_azca > 0) && (ocu_azca < 50)){
+                    }else if((resultado > 0) && (resultado < 50)){
                         poligonosMapa.addAzcaLayerVerde(style);
                         Log.e(TAG_onDataChange,"layer verde clase Condicional Azcapo");
-                    }else if (ocu_azca == 0){
+                    }else if (resultado == 0){
                         poligonosMapa.addAzcaSinDatos(style);
                         Log.e(TAG_onDataChange,"layer s/d clase Condicional Azcapo");
                     }else{

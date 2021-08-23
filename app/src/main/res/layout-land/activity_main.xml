@@ -35,7 +35,6 @@
         app:srcCompat="@drawable/edificio" />
 
     <ImageView
-        android:id="@+id/img_gel_land"
         android:layout_width="83dp"
         android:layout_height="116dp"
         android:layout_marginEnd="8dp"
@@ -80,7 +79,6 @@
         app:layout_constraintTop_toTopOf="@+id/cons_layout_toolbar" />
 
     <TextView
-        android:id="@+id/textView_consejoTit_land"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/brawler"
@@ -95,7 +93,6 @@
         app:layout_constraintVertical_bias="0.156" />
 
     <ImageView
-        android:id="@+id/img_manos_land"
         android:layout_width="80dp"
         android:layout_height="107dp"
         android:layout_marginStart="16dp"
@@ -124,7 +121,6 @@
         app:layout_constraintTop_toTopOf="@+id/cons_layout_toolbar" />
 
     <ImageView
-        android:id="@+id/img_mask_land"
         android:layout_width="80dp"
         android:layout_height="107dp"
         android:layout_marginEnd="24dp"
@@ -166,7 +162,6 @@
         app:layout_constraintTop_toTopOf="@+id/call_button" />
 
     <TextView
-        android:id="@+id/textView_linea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -240,7 +235,6 @@
         tools:visibility="visible" />
 
     <androidx.constraintlayout.helper.widget.Layer
-        android:id="@+id/layer"
         android:layout_width="159dp"
         android:layout_height="117dp"
         android:layout_marginEnd="731dp"
@@ -252,7 +246,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.helper.widget.Flow
-        android:id="@+id/flow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="731dp"
@@ -264,7 +257,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.helper.widget.Flow
-        android:id="@+id/flow2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="731dp"
@@ -276,21 +268,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_end="-50dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="-116dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -300,21 +289,18 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="-296dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="-215dp" />
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="78dp"
         android:layout_height="70dp"
         android:layout_marginEnd="20dp"

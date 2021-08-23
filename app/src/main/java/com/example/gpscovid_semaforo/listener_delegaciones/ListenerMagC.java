@@ -22,24 +22,27 @@ public class ListenerMagC {
 
     public void ListenerMC(Style style){
         databaseReference = FirebaseDatabase.getInstance().getReference();
-        mDatosRef=databaseReference.child("ocupacion");
+        mDatosRef=databaseReference.child("ocupacion").child("ocu_magC");
         mDatosListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Float ocu_magC = Float.valueOf(snapshot.child("ocu_magC").getValue().toString());
+                float ocu_ccv = Float.parseFloat(snapshot.child("ocu_camas_c_venti").getValue().toString());
+                float ocu_chgral = Float.parseFloat(snapshot.child("ocu_camas_h_gral").getValue().toString());
+                float ocu_cvuci = Float.parseFloat(snapshot.child("ocu_camas_vent_uci").getValue().toString());
 
+                float resultado = (ocu_ccv+ocu_chgral+ocu_cvuci)/3;
                 if(snapshot.exists()){
 
-                    if(ocu_magC > 70){
+                    if(resultado > 70){
                         poligonosMapa.addMCLayerRojo(style);
                         Log.e(TAG_onDataChange,"layer rojo"+ Layer);
-                    }else if((ocu_magC > 50) && (ocu_magC < 70)){
+                    }else if((resultado > 50) && (resultado < 70)){
                         poligonosMapa.addMCLayerAmarillo(style);
                         Log.e(TAG_onDataChange,"layer amarillo "+Layer);
-                    }else if((ocu_magC > 0) && (ocu_magC < 50)){
+                    }else if((resultado > 0) && (resultado < 50)){
                         poligonosMapa.addMCLayerVerde(style);
                         Log.e(TAG_onDataChange,"layer verde clase "+ Layer);
-                    }else if (ocu_magC == 0){
+                    }else if (resultado == 0){
                         poligonosMapa.addMCLayerSD(style);
                         Log.e(TAG_onDataChange,"layer s/d" + Layer);
                     }else{

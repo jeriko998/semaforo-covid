@@ -22,24 +22,28 @@ public class ListenerGAM {
 
     public void ListenerGaM(Style style){
         databaseReference = FirebaseDatabase.getInstance().getReference();
-        mDatosRef=databaseReference.child("ocupacion");
+        mDatosRef=databaseReference.child("ocupacion").child("ocu_gam");
         mDatosListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Float ocu_gam = Float.valueOf(snapshot.child("ocu_gam").getValue().toString());
+                float ocu_ccv = Float.parseFloat(snapshot.child("ocu_camas_c_venti").getValue().toString());
+                float ocu_chgral = Float.parseFloat(snapshot.child("ocu_camas_h_gral").getValue().toString());
+                float ocu_cvuci = Float.parseFloat(snapshot.child("ocu_camas_vent_uci").getValue().toString());
+
+                float resultado = (ocu_ccv+ocu_chgral+ocu_cvuci)/3;
 
                 if(snapshot.exists()){
 
-                    if(ocu_gam > 70){
+                    if(resultado > 70){
                         poligonosMapa.addGAMLayerRojo(style);
                         Log.e(TAG_onDataChange,"layer rojo"+ Layer);
-                    }else if((ocu_gam > 50) && (ocu_gam < 70)){
+                    }else if((resultado > 50) && (resultado < 70)){
                         poligonosMapa.addGAMLayerAmarillo(style);
                         Log.e(TAG_onDataChange,"layer amarillo "+Layer);
-                    }else if((ocu_gam > 0) && (ocu_gam < 50)){
+                    }else if((resultado > 0) && (resultado < 50)){
                         poligonosMapa.addGAMLayerVerde(style);
                         Log.e(TAG_onDataChange,"layer verde clase "+ Layer);
-                    }else if (ocu_gam == 0){
+                    }else if (resultado == 0){
                         poligonosMapa.addGAMLayerSinDatos(style);
                         Log.e(TAG_onDataChange,"layer s/d" + Layer);
                     }else{

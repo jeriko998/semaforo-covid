@@ -227,11 +227,12 @@ public class ConfiguracionUbicacion extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         checkConfiguracion();
+        iniciarActualizacionUbicacion();
+        actualizarGPS();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        detenerActualizacionUbicacion();
     }
 }

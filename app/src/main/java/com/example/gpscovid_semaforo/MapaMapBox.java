@@ -43,7 +43,6 @@ public class MapaMapBox extends AppCompatActivity implements
 
     private static final long DEFAULT_INTERVAL_IN_MILLISECONDS = 1000L;
     private static final long DEFAULT_MAX_WAIT_TIME = DEFAULT_INTERVAL_IN_MILLISECONDS * 5;
-    private int semaforo_rojo = 70;
     public String mLatitud;
     public String mLongitud;
     private String TAG_onDataChange = "onDataChange";
@@ -107,11 +106,11 @@ public class MapaMapBox extends AppCompatActivity implements
                 if(snapshot.exists()){
 
                     listenerDelegaciones.abrirDelegaciones(style);
-                    Log.d(TAG_onDataChange,"snapshot existente y listeners en orden");
+                    Log.e(TAG_onDataChange,"snapshot existente y listeners en orden");
                 }else{
                     Log.e(TAG_onDataChange,"snapshot inexistente");
                 }
-                Log.d(TAG_onDataChange,"datos leidos");
+                Log.e(TAG_onDataChange,"datos leidos");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -258,6 +257,11 @@ public class MapaMapBox extends AppCompatActivity implements
         this.mLongitud = callback.longitud;
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mapView.onStart();
+    }
 
     @Override
     protected void onResume() {

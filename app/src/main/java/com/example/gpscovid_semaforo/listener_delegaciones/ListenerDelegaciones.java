@@ -15,6 +15,10 @@ public class ListenerDelegaciones {
     ListenerMagC listenerMC = new ListenerMagC();
     ListenerMH listenerMH = new ListenerMH();
     ListenerMilpaAlta listenerMA = new ListenerMilpaAlta();
+    ListenerTlahuac listenerTlahuac = new ListenerTlahuac();
+    ListenerTlalpan listenerTlalpan = new ListenerTlalpan();
+    ListenerVenC listenerVenC = new ListenerVenC();
+    ListenerXo listenerXo = new ListenerXo();
 
     public void abrirDelegaciones(Style style){
         listenerAlvOb.ListenerAO(style);
@@ -29,5 +33,9 @@ public class ListenerDelegaciones {
         listenerMC.ListenerMC(style);
         listenerMH.ListenerMHM(style);
         listenerMA.ListenerMa(style);
+        listenerTlahuac.ListenerTlahuacM(style);
+        listenerTlalpan.ListenerTlalpanM(style);
+        listenerVenC.ListenerVCM(style);
+        listenerXo.ListenerXoM(style);
     }
 }

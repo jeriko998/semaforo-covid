@@ -22,24 +22,27 @@ public class ListenerAlvOb {
 
     public void ListenerAO(Style style){
         databaseReference = FirebaseDatabase.getInstance().getReference();
-        mDatosRef=databaseReference.child("ocupacion");
+        mDatosRef=databaseReference.child("ocupacion").child("ocu_alvaroo");
         mDatosListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Float ocu_alo = Float.valueOf(snapshot.child("ocu_alvaroo").getValue().toString());
+                float ocu_ccv = Float.parseFloat(snapshot.child("ocu_camas_c_venti").getValue().toString());
+                float ocu_chgral = Float.parseFloat(snapshot.child("ocu_camas_h_gral").getValue().toString());
+                float ocu_cvuci = Float.parseFloat(snapshot.child("ocu_camas_vent_uci").getValue().toString());
 
+                float resultado = (ocu_ccv + ocu_chgral + ocu_cvuci)/3;
                 if(snapshot.exists()){
 
-                    if(ocu_alo > 70){
+                    if(resultado > 70){
                         poligonosMapa.addAlvObLayerRojo(style);
                         Log.e(TAG_onDataChange,"layer rojo"+ Layer_AO);
-                    }else if((ocu_alo > 50) && (ocu_alo < 70)){
+                    }else if((resultado > 50) && (resultado < 70)){
                         poligonosMapa.addAlvObLayerAmarillo(style);
                         Log.e(TAG_onDataChange,"layer amarillo "+Layer_AO);
-                    }else if((ocu_alo > 0) && (ocu_alo < 50)){
+                    }else if((resultado > 0) && (resultado < 50)){
                         poligonosMapa.addAlvObLayerVerde(style);
                         Log.e(TAG_onDataChange,"layer verde clase "+ Layer_AO);
-                    }else if (ocu_alo == 0){
+                    }else if (resultado == 0){
                         poligonosMapa.addAlObSinDatos(style);
                         Log.e(TAG_onDataChange,"layer s/d" + Layer_AO);
                     }else{

@@ -12,17 +12,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mapbox.mapboxsdk.maps.Style;
 
-public class ListenerCuajimalpa {
+public class ListenerXo {
     private final String TAG_onDataChange = "onDataChange";
-    private final String Layer= "clase condicional Cuajimalpa";
+    private final String Layer= "clase condicional Xochimilco";
     PoligonosMapa poligonosMapa = new PoligonosMapa();
     DatabaseReference databaseReference;
     DatabaseReference mDatosRef;
     private ValueEventListener mDatosListener;
 
-    public void ListenerCu(Style style){
+    public void ListenerXoM(Style style){
         databaseReference = FirebaseDatabase.getInstance().getReference();
-        mDatosRef=databaseReference.child("ocupacion").child("ocu_cuajim");
+        mDatosRef=databaseReference.child("ocupacion").child("ocu_xo");
         mDatosListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -31,20 +31,19 @@ public class ListenerCuajimalpa {
                 float ocu_cvuci = Float.parseFloat(snapshot.child("ocu_camas_vent_uci").getValue().toString());
 
                 float resultado = (ocu_ccv+ocu_chgral+ocu_cvuci)/3;
-
                 if(snapshot.exists()){
 
                     if(resultado > 70){
-                        poligonosMapa.addCuLayerRojo(style);
+                        poligonosMapa.addXoLayerRojo(style);
                         Log.e(TAG_onDataChange,"layer rojo"+ Layer);
                     }else if((resultado > 50) && (resultado < 70)){
-                        poligonosMapa.addCuLayerAmarillo(style);
+                        poligonosMapa.addXoLayerAmarillo(style);
                         Log.e(TAG_onDataChange,"layer amarillo "+Layer);
                     }else if((resultado > 0) && (resultado < 50)){
-                        poligonosMapa.addCuLayerVerde(style);
+                        poligonosMapa.addXoLayerVerde(style);
                         Log.e(TAG_onDataChange,"layer verde clase "+ Layer);
                     }else if (resultado == 0){
-                        poligonosMapa.addCuLayerSinDatos(style);
+                        poligonosMapa.addXoLayerSD(style);
                         Log.e(TAG_onDataChange,"layer s/d" + Layer);
                     }else{
                         Log.e(TAG_onDataChange,"error en condicionales"+Layer);
