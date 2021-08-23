@@ -12,35 +12,35 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mapbox.mapboxsdk.maps.Style;
 
-public class ListenerBenJu {
+public class ListenerMagC {
     private final String TAG_onDataChange = "onDataChange";
-    private final String Layer= "clase condicional benito juarez";
+    private final String Layer= "clase condicional Mag Contreras";
     PoligonosMapa poligonosMapa = new PoligonosMapa();
     DatabaseReference databaseReference;
     DatabaseReference mDatosRef;
     private ValueEventListener mDatosListener;
 
-    public void ListenerBJ(Style style){
+    public void ListenerMC(Style style){
         databaseReference = FirebaseDatabase.getInstance().getReference();
         mDatosRef=databaseReference.child("ocupacion");
         mDatosListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Float ocu_benj = Float.valueOf(snapshot.child("ocu_benj").getValue().toString());
+                Float ocu_magC = Float.valueOf(snapshot.child("ocu_magC").getValue().toString());
 
                 if(snapshot.exists()){
 
-                    if(ocu_benj > 70){
-                        poligonosMapa.addBJLayerRojo(style);
+                    if(ocu_magC > 70){
+                        poligonosMapa.addMCLayerRojo(style);
                         Log.e(TAG_onDataChange,"layer rojo"+ Layer);
-                    }else if((ocu_benj > 50) && (ocu_benj < 70)){
-                        poligonosMapa.addBJLayerAmarillo(style);
+                    }else if((ocu_magC > 50) && (ocu_magC < 70)){
+                        poligonosMapa.addMCLayerAmarillo(style);
                         Log.e(TAG_onDataChange,"layer amarillo "+Layer);
-                    }else if((ocu_benj > 0) && (ocu_benj < 50)){
-                        poligonosMapa.addBJLayerVerde(style);
+                    }else if((ocu_magC > 0) && (ocu_magC < 50)){
+                        poligonosMapa.addMCLayerVerde(style);
                         Log.e(TAG_onDataChange,"layer verde clase "+ Layer);
-                    }else if (ocu_benj == 0){
-                        poligonosMapa.addBJSinDatos(style);
+                    }else if (ocu_magC == 0){
+                        poligonosMapa.addMCLayerSD(style);
                         Log.e(TAG_onDataChange,"layer s/d" + Layer);
                     }else{
                         Log.e(TAG_onDataChange,"error en condicionales"+Layer);

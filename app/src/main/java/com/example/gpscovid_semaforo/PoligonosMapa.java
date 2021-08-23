@@ -257,7 +257,7 @@ public class PoligonosMapa {
     }//[FIN]
 
     //[INICIO] metodos para capas de Coyoacan
-    protected void addCoLayerRojo(@NonNull Style loadedMapStyle) {
+    public void addCoLayerRojo(@NonNull Style loadedMapStyle) {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon coyoacan R", GEOJSON_SOURCE_Co);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
@@ -269,7 +269,7 @@ public class PoligonosMapa {
                 PropertyFactory.lineWidth(.9f),
                 PropertyFactory.lineColor(Color.BLACK)));
     }
-    protected void addCoLayerVerde(@NonNull Style loadedMapStyle) {
+    public void addCoLayerVerde(@NonNull Style loadedMapStyle) {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon coyoacan V", GEOJSON_SOURCE_Co);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
@@ -281,7 +281,7 @@ public class PoligonosMapa {
                 PropertyFactory.lineWidth(.9f),
                 PropertyFactory.lineColor(Color.BLACK)));
     }
-    protected void addCoLayerAmarillo(@NonNull Style loadedMapStyle) {
+    public void addCoLayerAmarillo(@NonNull Style loadedMapStyle) {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon coyoacan ", GEOJSON_SOURCE_Co);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
@@ -307,20 +307,59 @@ public class PoligonosMapa {
                 PropertyFactory.lineColor(Color.BLACK)));
     }//[FIN]
 
-        protected  void addCuLayer(@NonNull Style loadedMapStyle){
-        FillLayer countryPolygonFillLayer = new FillLayer("polygon cuajimalpa ", GEOJSON_SOURCE_Cu);
+    //[INICIO] metodos para capas de Cuajimalpa
+    public  void addCuLayerRojo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon cuajimalpa R", GEOJSON_SOURCE_Cu);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
                 PropertyFactory.fillOpacity(.4f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-        loadedMapStyle.addLayer(new LineLayer("linelayer Cuajimalpa",GEOJSON_SOURCE_Cu).withProperties(
+        loadedMapStyle.addLayer(new LineLayer("linelayer Cuajimalpa R",GEOJSON_SOURCE_Cu).withProperties(
                 PropertyFactory.lineWidth(.9f),
                 PropertyFactory.lineColor(Color.BLACK)));
     }
+    public  void addCuLayerAmarillo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon cuajimalpa A", GEOJSON_SOURCE_Cu);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.YELLOW),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-    protected  void addCuauhLayer(@NonNull Style loadedMapStyle){
+        loadedMapStyle.addLayer(new LineLayer("linelayer Cuajimalpa A",GEOJSON_SOURCE_Cu).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }
+    public  void addCuLayerVerde(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon cuajimalpa V", GEOJSON_SOURCE_Cu);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.GREEN),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer Cuajimalpa V",GEOJSON_SOURCE_Cu).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }
+    public void addCuLayerSinDatos(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon Cu SD", GEOJSON_SOURCE_Cu);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.LTGRAY),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer Cu SD", GEOJSON_SOURCE_Cu).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }//[FIN]
+
+    //[INICIO] metodos para capas de Cuauhtemoc
+    public  void addCuauhLayerRojo(@NonNull Style loadedMapStyle){
         FillLayer countryPolygonFillLayer = new FillLayer("polygon cuauhtemoc ", GEOJSON_SOURCE_Cuauh);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
@@ -332,90 +371,368 @@ public class PoligonosMapa {
                 PropertyFactory.lineWidth(.9f),
                 PropertyFactory.lineColor(Color.BLACK)));
     }
+    public  void addCuauhLayerAmarillo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon cuauhtemoc ", GEOJSON_SOURCE_Cuauh);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.YELLOW),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-    protected  void addGALayer(@NonNull Style loadedMapStyle){
-        FillLayer countryPolygonFillLayer = new FillLayer("polygon Gustavo Amadero ", GEOJSON_SOURCE_GA);
+        loadedMapStyle.addLayer(new LineLayer("linelayer Cuauhtemoc",GEOJSON_SOURCE_Cuauh).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }
+    public  void addCuauhLayerVerde(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon cuauhtemoc ", GEOJSON_SOURCE_Cuauh);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.GREEN),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer Cuauhtemoc",GEOJSON_SOURCE_Cuauh).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }
+    public void addCuauhLayerSinDatos(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon Cuauh SD", GEOJSON_SOURCE_Cuauh);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.LTGRAY),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer Cuauh SD", GEOJSON_SOURCE_Cuauh).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }//[FIN]
+
+    //[INICIO] metodos para capas de Gustavo A Madero
+    public  void addGAMLayerRojo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon Gustavo Amadero R", GEOJSON_SOURCE_GA);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
                 PropertyFactory.fillOpacity(.4f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-        loadedMapStyle.addLayer(new LineLayer("linelayer Gustavo Amdero",GEOJSON_SOURCE_GA).withProperties(
+        loadedMapStyle.addLayer(new LineLayer("linelayer Gustavo Amdero R",GEOJSON_SOURCE_GA).withProperties(
                 PropertyFactory.lineWidth(.9f),
                 PropertyFactory.lineColor(Color.BLACK))
         );
     }
+    public  void addGAMLayerAmarillo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon Gustavo Amadero A", GEOJSON_SOURCE_GA);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.YELLOW),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-    protected  void addIztacalcoLayer(@NonNull Style loadedMapStyle){
-        FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztacalco ", GEOJSON_SOURCE_Iztacalco);
+        loadedMapStyle.addLayer(new LineLayer("linelayer Gustavo Amdero ",GEOJSON_SOURCE_GA).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK))
+        );
+    }
+    public  void addGAMLayerVerde(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon Gustavo Amadero V", GEOJSON_SOURCE_GA);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.GREEN),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer Gustavo Amdero V",GEOJSON_SOURCE_GA).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK))
+        );
+    }
+    public void addGAMLayerSinDatos(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon CAM SD", GEOJSON_SOURCE_GA);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.LTGRAY),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer GAM SD", GEOJSON_SOURCE_GA).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }//[FIN]
+
+    //[INICIO] metodos para capas de Iztacalco
+    public  void addIztacaLayerRojo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztacalco R", GEOJSON_SOURCE_Iztacalco);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
                 PropertyFactory.fillOpacity(.4f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-        loadedMapStyle.addLayer(new LineLayer("linelayer Iztacalco",GEOJSON_SOURCE_Iztacalco).withProperties(
+        loadedMapStyle.addLayer(new LineLayer("linelayer Iztacalco R",GEOJSON_SOURCE_Iztacalco).withProperties(
                 PropertyFactory.lineWidth(.9f),
                 PropertyFactory.lineColor(Color.BLACK))
         );
     }
+    public  void addIztacaLayerAmarillo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztacalco A", GEOJSON_SOURCE_Iztacalco);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.YELLOW),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-    protected  void addIztapalapaLayer(@NonNull Style loadedMapStyle){
-        FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztapalapa ", GEOJSON_SOURCE_Iztapalapa);
+        loadedMapStyle.addLayer(new LineLayer("linelayer Iztacalco A",GEOJSON_SOURCE_Iztacalco).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK))
+        );
+    }
+    public  void addIztacaLayerVerde(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztacalco V", GEOJSON_SOURCE_Iztacalco);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.GREEN),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer Iztacalco V",GEOJSON_SOURCE_Iztacalco).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK))
+        );
+    }
+    public void addIztacaLayerSD(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztaca SD", GEOJSON_SOURCE_Iztacalco);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.LTGRAY),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer Iztaca SD", GEOJSON_SOURCE_Iztacalco).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }//[FIN]
+
+    //[INICIO] metodos para capas de Iztapalapa
+    public  void addIztapaLayerRojo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztapalapa R", GEOJSON_SOURCE_Iztapalapa);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
                 PropertyFactory.fillOpacity(.4f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-        loadedMapStyle.addLayer(new LineLayer("linelayer Iztapalapa",GEOJSON_SOURCE_Iztapalapa).withProperties(
+        loadedMapStyle.addLayer(new LineLayer("linelayer Iztapalapa R",GEOJSON_SOURCE_Iztapalapa).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK))
+        );
+    }
+    public void addIztapaLayerAmarillo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztapalapa A", GEOJSON_SOURCE_Iztapalapa);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.YELLOW),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer Iztapalapa A",GEOJSON_SOURCE_Iztapalapa).withProperties(
                 PropertyFactory.lineWidth(.9f),
                 PropertyFactory.lineColor(Color.BLACK))
         );
     }
 
-    protected  void addMCLayer(@NonNull Style loadedMapStyle){
-        FillLayer countryPolygonFillLayer = new FillLayer("polygon MC ", GEOJSON_SOURCE_MC);
+    public  void addIztapaLayerVerde(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztapalapa V", GEOJSON_SOURCE_Iztapalapa);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.GREEN),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer Iztapalapa V",GEOJSON_SOURCE_Iztapalapa).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK))
+        );
+    }
+    public void addIztapaLayerSD(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygoN Iztapa SD", GEOJSON_SOURCE_Iztapalapa);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.LTGRAY),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer Iztapa SD", GEOJSON_SOURCE_Iztapalapa).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }//[FIN]
+
+    public  void addMCLayerRojo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon MC R", GEOJSON_SOURCE_MC);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
                 PropertyFactory.fillOpacity(.4f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-        loadedMapStyle.addLayer(new LineLayer("linelayer MC",GEOJSON_SOURCE_MC).withProperties(
+        loadedMapStyle.addLayer(new LineLayer("linelayer MC R",GEOJSON_SOURCE_MC).withProperties(
                 PropertyFactory.lineWidth(.9f),
                 PropertyFactory.lineColor(Color.BLACK))
         );
     }
+    public  void addMCLayerAmarillo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon MC R", GEOJSON_SOURCE_MC);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.YELLOW),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-    protected  void addMHLayer(@NonNull Style loadedMapStyle){
-        FillLayer countryPolygonFillLayer = new FillLayer("polygon MH ", GEOJSON_SOURCE_MH);
+        loadedMapStyle.addLayer(new LineLayer("linelayer MC R",GEOJSON_SOURCE_MC).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK))
+        );
+    }
+    public  void addMCLayerVerde(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon MC V ", GEOJSON_SOURCE_MC);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.GREEN),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer MC V",GEOJSON_SOURCE_MC).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK))
+        );
+    }
+    public void addMCLayerSD(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygoN MC SD", GEOJSON_SOURCE_MC);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.LTGRAY),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer MC SD", GEOJSON_SOURCE_MC).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }//[FIN]
+
+    //[INICIO] metodos para capas de Miguel Hidalgo
+    public  void addMHLayerRojo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon MH R", GEOJSON_SOURCE_MH);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
                 PropertyFactory.fillOpacity(.4f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-        loadedMapStyle.addLayer(new LineLayer("linelayer MH",GEOJSON_SOURCE_MH).withProperties(
+        loadedMapStyle.addLayer(new LineLayer("linelayer MH R",GEOJSON_SOURCE_MH).withProperties(
                 PropertyFactory.lineWidth(.9f),
                 PropertyFactory.lineColor(Color.BLACK))
         );
     }
+    public  void addMHLayerAmarillo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon MH A", GEOJSON_SOURCE_MH);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.YELLOW),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-    protected  void addMALayer(@NonNull Style loadedMapStyle){
-        FillLayer countryPolygonFillLayer = new FillLayer("polygon MA ", GEOJSON_SOURCE_MA);
+        loadedMapStyle.addLayer(new LineLayer("linelayer MH A",GEOJSON_SOURCE_MH).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK))
+        );
+    }
+    public  void addMHLayerVerde(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon MH V", GEOJSON_SOURCE_MH);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
                 PropertyFactory.fillOpacity(.4f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-        loadedMapStyle.addLayer(new LineLayer("linelayer MA",GEOJSON_SOURCE_MA).withProperties(
+        loadedMapStyle.addLayer(new LineLayer("linelayer MH V",GEOJSON_SOURCE_MH).withProperties(
                 PropertyFactory.lineWidth(.9f),
                 PropertyFactory.lineColor(Color.BLACK))
         );
     }
+
+    public void addMHLayerSD(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygoN MH SD", GEOJSON_SOURCE_MH);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.LTGRAY),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer MH SD", GEOJSON_SOURCE_MH).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }//[FIN]
+
+    //[INICIO] metodos para capas de Milpa Alta
+    public  void addMALayerRojo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon MA R", GEOJSON_SOURCE_MA);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.RED),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer MA R",GEOJSON_SOURCE_MA).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK))
+        );
+    }
+    public  void addMALayerAmarillo(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon MA a", GEOJSON_SOURCE_MA);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.YELLOW),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer MA a",GEOJSON_SOURCE_MA).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK))
+        );
+    }
+    public  void addMALayerVede(@NonNull Style loadedMapStyle){
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon MA v", GEOJSON_SOURCE_MA);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.GREEN),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer MA V",GEOJSON_SOURCE_MA).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK))
+        );
+    }
+    public void addMALayerSD(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygoN Ma SD", GEOJSON_SOURCE_MA);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.LTGRAY),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer Ma SD", GEOJSON_SOURCE_MA).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }//[FIN]
 
     protected  void addTlahuacLayer(@NonNull Style loadedMapStyle){
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Tlahuac ", GEOJSON_SOURCE_Tlahuac);

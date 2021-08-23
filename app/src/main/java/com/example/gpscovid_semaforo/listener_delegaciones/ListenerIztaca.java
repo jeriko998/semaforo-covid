@@ -12,35 +12,35 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mapbox.mapboxsdk.maps.Style;
 
-public class ListenerBenJu {
+public class ListenerIztaca {
     private final String TAG_onDataChange = "onDataChange";
-    private final String Layer= "clase condicional benito juarez";
+    private final String Layer= "clase condicional Iztacalco";
     PoligonosMapa poligonosMapa = new PoligonosMapa();
     DatabaseReference databaseReference;
     DatabaseReference mDatosRef;
     private ValueEventListener mDatosListener;
 
-    public void ListenerBJ(Style style){
+    public void ListenerIztacalcoM(Style style){
         databaseReference = FirebaseDatabase.getInstance().getReference();
         mDatosRef=databaseReference.child("ocupacion");
         mDatosListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Float ocu_benj = Float.valueOf(snapshot.child("ocu_benj").getValue().toString());
+                Float ocu_iztaca = Float.valueOf(snapshot.child("ocu_iztacalco").getValue().toString());
 
                 if(snapshot.exists()){
 
-                    if(ocu_benj > 70){
-                        poligonosMapa.addBJLayerRojo(style);
+                    if(ocu_iztaca > 70){
+                        poligonosMapa.addIztacaLayerRojo(style);
                         Log.e(TAG_onDataChange,"layer rojo"+ Layer);
-                    }else if((ocu_benj > 50) && (ocu_benj < 70)){
-                        poligonosMapa.addBJLayerAmarillo(style);
+                    }else if((ocu_iztaca > 50) && (ocu_iztaca < 70)){
+                        poligonosMapa.addIztacaLayerAmarillo(style);
                         Log.e(TAG_onDataChange,"layer amarillo "+Layer);
-                    }else if((ocu_benj > 0) && (ocu_benj < 50)){
-                        poligonosMapa.addBJLayerVerde(style);
+                    }else if((ocu_iztaca > 0) && (ocu_iztaca < 50)){
+                        poligonosMapa.addIztacaLayerVerde(style);
                         Log.e(TAG_onDataChange,"layer verde clase "+ Layer);
-                    }else if (ocu_benj == 0){
-                        poligonosMapa.addBJSinDatos(style);
+                    }else if (ocu_iztaca == 0){
+                        poligonosMapa.addIztacaLayerSD(style);
                         Log.e(TAG_onDataChange,"layer s/d" + Layer);
                     }else{
                         Log.e(TAG_onDataChange,"error en condicionales"+Layer);

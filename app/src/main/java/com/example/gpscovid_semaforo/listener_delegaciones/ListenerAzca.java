@@ -14,7 +14,7 @@ import com.mapbox.mapboxsdk.maps.Style;
 
 public class ListenerAzca {
 
-    private String TAG_onDataChange = "onDataChange";
+    private final String TAG_onDataChange = "onDataChange";
     PoligonosMapa poligonosMapa = new PoligonosMapa();
     DatabaseReference databaseReference;
     DatabaseReference mDatosRef;

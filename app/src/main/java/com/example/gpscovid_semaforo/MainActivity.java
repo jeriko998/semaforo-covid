@@ -34,14 +34,12 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private NotificationManagerCompat notificationManagerCompat;
-    private int TiempoEspera = 3000;
     private TelephonyManager mTelephonyManager;
     public String LOG_TAG;
     private static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
     public static final int CALL_PERMISSION = 1;
     List<String> listPermissionsNeeded = new ArrayList<>();
-    MapaMapBox mapaMapBox = new MapaMapBox();
-    LocationEngineResult result;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
