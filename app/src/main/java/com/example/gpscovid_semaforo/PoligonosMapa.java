@@ -42,8 +42,7 @@ public class PoligonosMapa {
     private static final String GEOJSON_SOURCE_Tlalpan = "Tlalpan";
     private static final String GEOJSON_SOURCE_VC = "Venustiano Carranza";
     private static final String GEOJSON_SOURCE_Xo = "Xochimilco";
-    int casos;
-    DatabaseReference databaseReference;
+    private static final String Color_Naranja= "#ff8c00";
 
 
     protected void createGeoJsonSource(@NonNull Style loadedMapStyle) {
@@ -89,10 +88,50 @@ public class PoligonosMapa {
 
 
     // Inicio de metodos para cargar la capa en el mapa
-
     // No cambiar los "layerid"
-    protected void addAlvObLayer(@NonNull Style loadedMapStyle) {
-                FillLayer countryPolygonFillLayer = new FillLayer("polygon alvaro", GEOJSON_SOURCE_AO);
+
+    public void addAlvObLayerVerde(@NonNull Style loadedMapStyle) {
+                FillLayer countryPolygonFillLayer = new FillLayer("polygon alvaro V", GEOJSON_SOURCE_AO);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.GREEN),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        countryPolygonFillLayer.getFillOutlineColor();
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+        loadedMapStyle.addLayer(new LineLayer("LL AO V",GEOJSON_SOURCE_AO).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }
+    public void addAlvObLayerAmarillo(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon alvaro A", GEOJSON_SOURCE_AO);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.YELLOW),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        countryPolygonFillLayer.getFillOutlineColor();
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+        loadedMapStyle.addLayer(new LineLayer("LL AO A",GEOJSON_SOURCE_AO).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }
+
+    protected void addAlvObLayerNaranja(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon alvaro N", GEOJSON_SOURCE_AO);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color_Naranja),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        countryPolygonFillLayer.getFillOutlineColor();
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+        loadedMapStyle.addLayer(new LineLayer("LL AO N",GEOJSON_SOURCE_AO).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }
+    public void addAlvObLayerRojo(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon alvaro R ", GEOJSON_SOURCE_AO);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
                 PropertyFactory.fillOpacity(.4f));
@@ -100,26 +139,40 @@ public class PoligonosMapa {
         countryPolygonFillLayer.getFillOutlineColor();
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
-        loadedMapStyle.addLayer(new LineLayer("LineLayer Alvaro",GEOJSON_SOURCE_AO).withProperties(
+        loadedMapStyle.addLayer(new LineLayer("LL AO R",GEOJSON_SOURCE_AO).withProperties(
                 PropertyFactory.lineWidth(.9f),
                 PropertyFactory.lineColor(Color.BLACK)));
     }
 
-    protected void addAzcaLayer(@NonNull Style loadedMapStyle) {
-        FillLayer countryPolygonFillLayer = new FillLayer("polygon azcapo ", GEOJSON_SOURCE_AZ);
+    public void addAlObSinDatos(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("poligon alob sn", GEOJSON_SOURCE_AZ);
         countryPolygonFillLayer.setProperties(
-                PropertyFactory.fillColor(Color.RED),
+                PropertyFactory.fillColor(Color.LTGRAY),
                 PropertyFactory.fillOpacity(.4f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
 
-        loadedMapStyle.addLayer(new LineLayer("linelayer Azcapo",GEOJSON_SOURCE_AZ).withProperties(
+        loadedMapStyle.addLayer(new LineLayer("linelayer AlvOb sn",GEOJSON_SOURCE_AZ).withProperties(
                 PropertyFactory.lineWidth(.9f),
                 PropertyFactory.lineColor(Color.BLACK)));
     }
 
-    protected void addAzcaLayerAmarillo(@NonNull Style loadedMapStyle) {
+    public void addAzcaLayerVerde(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon azcapo ", GEOJSON_SOURCE_AZ);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.GREEN),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+
+        loadedMapStyle.addLayer(new LineLayer("Ll A V",GEOJSON_SOURCE_AZ).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }
+
+    public void addAzcaLayerAmarillo(@NonNull Style loadedMapStyle) {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon azcapo a", GEOJSON_SOURCE_AZ);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
@@ -128,10 +181,54 @@ public class PoligonosMapa {
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
 
-        loadedMapStyle.addLayer(new LineLayer("linelayer Azcapo Amarillo",GEOJSON_SOURCE_AZ).withProperties(
+        loadedMapStyle.addLayer(new LineLayer("LL A A",GEOJSON_SOURCE_AZ).withProperties(
                 PropertyFactory.lineWidth(.9f),
                 PropertyFactory.lineColor(Color.BLACK)));
     }
+
+    protected void addAzcaLayerNaranja(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon azcapo a", GEOJSON_SOURCE_AZ);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color_Naranja),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+
+        loadedMapStyle.addLayer(new LineLayer("LL AZ N",GEOJSON_SOURCE_AZ).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }
+
+    public void addAzcaLayerRojo(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon azcapo r", GEOJSON_SOURCE_AZ);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.RED),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+
+        loadedMapStyle.addLayer(new LineLayer("LL AZ R",GEOJSON_SOURCE_AZ).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }
+
+    public void addAzcaSinDatos(@NonNull Style loadedMapStyle) {
+        FillLayer countryPolygonFillLayer = new FillLayer("polygon azcapo sn", GEOJSON_SOURCE_AZ);
+        countryPolygonFillLayer.setProperties(
+                PropertyFactory.fillColor(Color.LTGRAY),
+                PropertyFactory.fillOpacity(.4f));
+        countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
+        loadedMapStyle.addLayer(countryPolygonFillLayer);
+
+
+        loadedMapStyle.addLayer(new LineLayer("linelayer Azcapo sn",GEOJSON_SOURCE_AZ).withProperties(
+                PropertyFactory.lineWidth(.9f),
+                PropertyFactory.lineColor(Color.BLACK)));
+    }
+
+
 
 
 

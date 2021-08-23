@@ -1,12 +1,12 @@
-package com.example.gpscovid_semaforo;
+package com.example.gpscovid_semaforo.listener_delegaciones;
 
 import com.mapbox.mapboxsdk.maps.Style;
 
-public class CondicionalDele {
-    CondicionalAzcapo condicionalAzcapo = new CondicionalAzcapo();
-    CondicionalAO condicionalAO = new CondicionalAO();
+public class ListenerDelegaciones {
+    ListenerAzca listenerAzca = new ListenerAzca();
+    ListenerAlvOb listenerAlvOb = new ListenerAlvOb();
     public void abrirCondicionales(Style style){
-        condicionalAO.AlvOb(style);
-        condicionalAzcapo.AzcaListener(style);
+        listenerAlvOb.AlvOb(style);
+        listenerAzca.AzcaListener(style);
     }
 }

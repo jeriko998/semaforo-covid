@@ -1,9 +1,10 @@
-package com.example.gpscovid_semaforo;
+package com.example.gpscovid_semaforo.listener_delegaciones;
 
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.example.gpscovid_semaforo.PoligonosMapa;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -11,7 +12,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mapbox.mapboxsdk.maps.Style;
 
-public class CondicionalAO {
+public class ListenerAlvOb {
     private String TAG_onDataChange = "onDataChange";
     private String Layer_AO = "clase condicional alvaro obregon";
     PoligonosMapa poligonosMapa = new PoligonosMapa();
@@ -38,7 +39,7 @@ public class CondicionalAO {
                         poligonosMapa.addAlvObLayerVerde(style);
                         Log.e(TAG_onDataChange,"layer verde clase "+ Layer_AO);
                     }else if (ocu_alo == 0){
-                        poligonosMapa.addAlvObLayerNaranja(style);
+                        poligonosMapa.addAlObSinDatos(style);
                         Log.e(TAG_onDataChange,"layer s/d" + Layer_AO);
                     }else{
                         Log.e(TAG_onDataChange,"error en condicionales"+Layer_AO);

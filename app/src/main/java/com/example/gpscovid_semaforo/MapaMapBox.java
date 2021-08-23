@@ -1,22 +1,15 @@
 package com.example.gpscovid_semaforo;
 
-import static com.mapbox.mapboxsdk.style.expressions.Expression.eq;
-import static com.mapbox.mapboxsdk.style.expressions.Expression.literal;
-
-import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
-import android.os.Handler;
-import android.widget.TextView;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
+import com.example.gpscovid_semaforo.listener_delegaciones.ListenerDelegaciones;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,8 +34,6 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
-import com.mapbox.mapboxsdk.style.layers.FillLayer;
-import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
@@ -52,9 +43,10 @@ public class MapaMapBox extends AppCompatActivity implements
 
     private static final long DEFAULT_INTERVAL_IN_MILLISECONDS = 1000L;
     private static final long DEFAULT_MAX_WAIT_TIME = DEFAULT_INTERVAL_IN_MILLISECONDS * 5;
-    private static final String GEOJSON_SOURCE_AO = "a";
+    private int semaforo_rojo = 70;
     public String mLatitud;
     public String mLongitud;
+    private String TAG_onDataChange = "onDataChange";
     protected MapboxMap mapboxMap;
     protected MapView mapView;
     public static final int F_LOCATION_PERM = 1;
@@ -62,13 +54,13 @@ public class MapaMapBox extends AppCompatActivity implements
     protected LocationEngine locationEngine;
     protected LocationChangeListeningActivityLocationCallback callback =
             new LocationChangeListeningActivityLocationCallback(this);
-    AbrirPoligonos abrirPoligonos = new AbrirPoligonos();
     NotificacionAlerta notificacionAlerta = new NotificacionAlerta();
     PoligonosMapa poligonosMapa = new PoligonosMapa();
     DatabaseReference databaseReference;
-    int casos;
-    int casosDB;
-    int mCasos;
+    DatabaseReference mDatosRef;
+    private ValueEventListener mDatosListener;
+    ListenerDelegaciones listenerDelegaciones = new ListenerDelegaciones();
+
 
 
     @Override
@@ -83,6 +75,7 @@ public class MapaMapBox extends AppCompatActivity implements
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
     }
 
@@ -93,17 +86,40 @@ public class MapaMapBox extends AppCompatActivity implements
         mapboxMap.setStyle(Style.MAPBOX_STREETS,
                 style -> {
                     enableLocationComponent(style);
+                    basicListener(style);
                     CameraPosition cameraPosition = new CameraPosition.Builder()
                             .target(new LatLng(19.4978, -99.1269))
                             .zoom(10)
                             .build();
                     mapboxMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-
-                    abrirPoligonos.abrirPoligonos(style);
-
+                    poligonosMapa.createGeoJsonSource(style);
                 });
     }
 
+    public void basicListener(Style style){
+
+        mDatosRef=databaseReference.child("ocupacion");
+        mDatosListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+
+                if(snapshot.exists()){
+
+                    listenerDelegaciones.abrirCondicionales(style);
+                    Log.d(TAG_onDataChange,"snapshot existente y listener en orden");
+                }else{
+                    Log.e(TAG_onDataChange,"snapshot inexistente");
+                }
+                Log.d(TAG_onDataChange,"datos leidos");
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("","datos cancelados"+ error.getMessage());
+            }
+        };
+        mDatosRef.addValueEventListener(mDatosListener);
+    }
 
 
     /**
@@ -133,7 +149,6 @@ public class MapaMapBox extends AppCompatActivity implements
 
             // Set the component's render mode
             locationComponent.setRenderMode(RenderMode.COMPASS);
-
             initLocationEngine();
 
         } else {
@@ -173,12 +188,7 @@ public class MapaMapBox extends AppCompatActivity implements
     @Override
     public void onPermissionResult(boolean granted) {
         if (granted) {
-            mapboxMap.getStyle(new Style.OnStyleLoaded() {
-                @Override
-                public void onStyleLoaded(@NonNull Style style) {
-                    enableLocationComponent(style);
-                }
-            });
+            mapboxMap.getStyle(style -> enableLocationComponent(style));
         } else {
             Toast.makeText(this, R.string.user_location_permission_not_granted, Toast.LENGTH_LONG).show();
         }
@@ -188,8 +198,6 @@ public class MapaMapBox extends AppCompatActivity implements
             implements LocationEngineCallback<LocationEngineResult> {
 
         private final WeakReference<MapaMapBox> activityWeakReference;
-        public static final String EXTRA_MESSAGE ="com.example.android.twoactivities.extra.MESSAGE";
-        public static final int TEXT_REQUEST=1;
 
         public String latitud;
         public String longitud;
@@ -250,11 +258,6 @@ public class MapaMapBox extends AppCompatActivity implements
         this.mLongitud = callback.longitud;
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mapView.onStart();
-    }
 
     @Override
     protected void onResume() {

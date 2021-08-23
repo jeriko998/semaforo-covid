@@ -1,9 +1,10 @@
-package com.example.gpscovid_semaforo;
+package com.example.gpscovid_semaforo.listener_delegaciones;
 
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.example.gpscovid_semaforo.PoligonosMapa;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -11,7 +12,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mapbox.mapboxsdk.maps.Style;
 
-public class CondicionalAzcapo {
+public class ListenerAzca {
 
     private String TAG_onDataChange = "onDataChange";
     PoligonosMapa poligonosMapa = new PoligonosMapa();
