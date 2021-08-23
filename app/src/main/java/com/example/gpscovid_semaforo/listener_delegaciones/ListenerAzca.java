@@ -20,7 +20,7 @@ public class ListenerAzca {
     DatabaseReference mDatosRef;
     private ValueEventListener mDatosListener;
 
-    public void AzcaListener(Style style){
+    public void ListenerAz(Style style){
         databaseReference = FirebaseDatabase.getInstance().getReference();
         mDatosRef=databaseReference.child("ocupacion");
         mDatosListener = new ValueEventListener() {

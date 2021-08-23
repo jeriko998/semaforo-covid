@@ -19,7 +19,8 @@ public class ListenerAlvOb {
     DatabaseReference databaseReference;
     DatabaseReference mDatosRef;
     private ValueEventListener mDatosListener;
-    public void AlvOb(Style style){
+
+    public void ListenerAO(Style style){
         databaseReference = FirebaseDatabase.getInstance().getReference();
         mDatosRef=databaseReference.child("ocupacion");
         mDatosListener = new ValueEventListener() {

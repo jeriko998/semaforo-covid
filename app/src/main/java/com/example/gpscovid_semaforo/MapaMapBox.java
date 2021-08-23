@@ -106,8 +106,8 @@ public class MapaMapBox extends AppCompatActivity implements
 
                 if(snapshot.exists()){
 
-                    listenerDelegaciones.abrirCondicionales(style);
-                    Log.d(TAG_onDataChange,"snapshot existente y listener en orden");
+                    listenerDelegaciones.abrirDelegaciones(style);
+                    Log.d(TAG_onDataChange,"snapshot existente y listeners en orden");
                 }else{
                     Log.e(TAG_onDataChange,"snapshot inexistente");
                 }

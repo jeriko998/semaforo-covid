@@ -5,8 +5,13 @@ import com.mapbox.mapboxsdk.maps.Style;
 public class ListenerDelegaciones {
     ListenerAzca listenerAzca = new ListenerAzca();
     ListenerAlvOb listenerAlvOb = new ListenerAlvOb();
-    public void abrirCondicionales(Style style){
-        listenerAlvOb.AlvOb(style);
-        listenerAzca.AzcaListener(style);
+    ListenerBenJu listenerBenJu = new ListenerBenJu();
+
+
+
+    public void abrirDelegaciones(Style style){
+        listenerAlvOb.ListenerAO(style);
+        listenerAzca.ListenerAz(style);
+        listenerBenJu.ListenerBJ(style);
     }
 }
