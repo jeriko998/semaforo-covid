@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //  Metodo para obtencion multiple de permisos
+
     public boolean checkAndRequestPermissions() {
         int permisoUbicacion_Segundoplano = ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_BACKGROUND_LOCATION);
@@ -147,7 +148,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
+
         super.onStart();
+        checkAndRequestPermissions();
     }
 
     @Override

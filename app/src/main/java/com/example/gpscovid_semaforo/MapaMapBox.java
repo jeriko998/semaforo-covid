@@ -1,10 +1,18 @@
 package com.example.gpscovid_semaforo;
 
 import android.annotation.SuppressLint;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconAllowOverlap;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconIgnorePlacement;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconImage;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +30,9 @@ import com.mapbox.android.core.location.LocationEngineRequest;
 import com.mapbox.android.core.location.LocationEngineResult;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
+import com.mapbox.geojson.Feature;
+import com.mapbox.geojson.FeatureCollection;
+import com.mapbox.geojson.Point;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
@@ -34,10 +45,10 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
+import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
+import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
 
 import java.lang.ref.WeakReference;
-import java.util.List;
-
 public class MapaMapBox extends AppCompatActivity implements
         OnMapReadyCallback, PermissionsListener {
 
@@ -59,7 +70,9 @@ public class MapaMapBox extends AppCompatActivity implements
     DatabaseReference mDatosRef;
     private ValueEventListener mDatosListener;
     ListenerDelegaciones listenerDelegaciones = new ListenerDelegaciones();
-
+    private static final String SOURCE_ID = "SOURCE_ID";
+    private static final String ICON_ID = "ICON_ID";
+    private static final String LAYER_ID = "LAYER_ID";
 
 
     @Override
@@ -78,21 +91,43 @@ public class MapaMapBox extends AppCompatActivity implements
 
     }
 
+    @SuppressLint("Range")
     @Override
     public void onMapReady(@NonNull MapboxMap mapboxMap) {
         this.mapboxMap = mapboxMap;
 
-        mapboxMap.setStyle(Style.MAPBOX_STREETS,
-                style -> {
-                    enableLocationComponent(style);
-                    basicListener(style);
-                    CameraPosition cameraPosition = new CameraPosition.Builder()
-                            .target(new LatLng(19.4978, -99.1269))
-                            .zoom(10)
-                            .build();
-                    mapboxMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-                    poligonosMapa.createGeoJsonSource(style);
-                });
+        List<Feature> symbolLayerH = new ArrayList<>();
+        symbolLayerH.add(Feature.fromGeometry(
+                Point.fromLngLat(19.362,-99.224)));
+
+        mapboxMap.setStyle(new Style.Builder().fromUri("mapbox://styles/jerikko/ckswd201s1a6h18pjokma6w43")
+                .withImage(ICON_ID, BitmapFactory.decodeResource(
+                        this.getResources(), R.drawable.hospital16))
+                .withSource(new GeoJsonSource(SOURCE_ID,
+                        FeatureCollection.fromFeatures(symbolLayerH)))
+                .withLayer(new SymbolLayer(LAYER_ID, SOURCE_ID)
+                        .withProperties(
+                                iconImage(ICON_ID),
+                                iconAllowOverlap(true),
+                                iconIgnorePlacement(true)
+                        )
+                ), new Style.OnStyleLoaded() {
+            @Override
+            public void onStyleLoaded(@NonNull Style style) {
+                enableLocationComponent(style);
+                basicListener(style);
+                /*
+                CameraPosition cameraPosition = new CameraPosition.Builder()
+                        .target(new LatLng(19.4978, -99.1269))
+                        .zoom(10)
+                        .build();
+                mapboxMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                mapboxMap.getUiSettings().setAllGesturesEnabled(true);
+                */
+                poligonosMapa.createGeoJsonSource(style);
+
+            }
+        });
     }
 
     public void basicListener(Style style){
@@ -227,8 +262,8 @@ public class MapaMapBox extends AppCompatActivity implements
                 longitud = String.valueOf(result.getLastLocation().getLongitude());
 
                 // Create a Toast which displays the new location's coordinates
-                Toast.makeText(activity,"Ubicación: "+latitud + " "+longitud,
-                        Toast.LENGTH_SHORT).show();
+                //Toast.makeText(activity,"Ubicación: "+latitud + " "+longitud,
+                  //      Toast.LENGTH_SHORT).show();
 
                 // Pass the new location to the Maps SDK's LocationComponent
                 if (activity.mapboxMap != null && result.getLastLocation() != null) {
