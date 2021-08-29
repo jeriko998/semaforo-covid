@@ -26,7 +26,8 @@ public class ListenerAlvOb {
         mDatosListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                float ocu_ccv = Float.parseFloat(snapshot.child("ocu_camas_c_venti").getValue().toString());
+                float ocu_ccv = Float.parseFloat(
+                        snapshot.child("ocu_camas_c_venti").getValue().toString());
                 float ocu_chgral = Float.parseFloat(snapshot.child("ocu_camas_h_gral").getValue().toString());
                 float ocu_cvuci = Float.parseFloat(snapshot.child("ocu_camas_vent_uci").getValue().toString());
 

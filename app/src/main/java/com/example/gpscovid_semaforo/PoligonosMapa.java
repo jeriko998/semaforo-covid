@@ -89,7 +89,7 @@ public class PoligonosMapa {
                 FillLayer countryPolygonFillLayer = new FillLayer("polygon alvaro V", GEOJSON_SOURCE_AO);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         countryPolygonFillLayer.getFillOutlineColor();
         loadedMapStyle.addLayer(countryPolygonFillLayer);
@@ -102,7 +102,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon alvaro A", GEOJSON_SOURCE_AO);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         countryPolygonFillLayer.getFillOutlineColor();
         loadedMapStyle.addLayer(countryPolygonFillLayer);
@@ -116,7 +116,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon alvaro R ", GEOJSON_SOURCE_AO);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         countryPolygonFillLayer.getFillOutlineColor();
         loadedMapStyle.addLayer(countryPolygonFillLayer);
@@ -130,7 +130,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("poligon alob sn", GEOJSON_SOURCE_AO);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -145,7 +145,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon azcapo ", GEOJSON_SOURCE_AZ);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -159,7 +159,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon azcapo a", GEOJSON_SOURCE_AZ);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -174,7 +174,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon azcapo r", GEOJSON_SOURCE_AZ);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -188,7 +188,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon azcapo sn", GEOJSON_SOURCE_AZ);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -203,7 +203,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("poligono BJ R ", GEOJSON_SOURCE_BJ);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -215,7 +215,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("poligono BJ A ", GEOJSON_SOURCE_BJ);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -227,7 +227,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("poligono BJ V ", GEOJSON_SOURCE_BJ);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -239,7 +239,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon BJ SD", GEOJSON_SOURCE_BJ);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -254,7 +254,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon coyoacan R", GEOJSON_SOURCE_Co);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -266,7 +266,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon coyoacan V", GEOJSON_SOURCE_Co);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -278,7 +278,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon coyoacan ", GEOJSON_SOURCE_Co);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -290,7 +290,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon CO SD", GEOJSON_SOURCE_Co);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -305,7 +305,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon cuajimalpa R", GEOJSON_SOURCE_Cu);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -317,7 +317,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon cuajimalpa A", GEOJSON_SOURCE_Cu);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -329,7 +329,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon cuajimalpa V", GEOJSON_SOURCE_Cu);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -341,7 +341,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Cu SD", GEOJSON_SOURCE_Cu);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -356,7 +356,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon cuauhtemoc ", GEOJSON_SOURCE_Cuauh);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -368,7 +368,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon cuauhtemoc ", GEOJSON_SOURCE_Cuauh);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -380,7 +380,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon cuauhtemoc ", GEOJSON_SOURCE_Cuauh);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -392,7 +392,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Cuauh SD", GEOJSON_SOURCE_Cuauh);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -407,7 +407,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Gustavo Amadero R", GEOJSON_SOURCE_GA);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -420,7 +420,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Gustavo Amadero A", GEOJSON_SOURCE_GA);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -433,7 +433,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Gustavo Amadero V", GEOJSON_SOURCE_GA);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -446,7 +446,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon CAM SD", GEOJSON_SOURCE_GA);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -461,7 +461,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztacalco R", GEOJSON_SOURCE_Iztacalco);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -474,7 +474,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztacalco A", GEOJSON_SOURCE_Iztacalco);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -487,7 +487,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztacalco V", GEOJSON_SOURCE_Iztacalco);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -500,7 +500,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztaca SD", GEOJSON_SOURCE_Iztacalco);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -515,7 +515,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztapalapa R", GEOJSON_SOURCE_Iztapalapa);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -528,7 +528,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztapalapa A", GEOJSON_SOURCE_Iztapalapa);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -542,7 +542,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Iztapalapa V", GEOJSON_SOURCE_Iztapalapa);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -555,7 +555,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygoN Iztapa SD", GEOJSON_SOURCE_Iztapalapa);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -569,7 +569,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon MC R", GEOJSON_SOURCE_MC);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -582,7 +582,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon MC R", GEOJSON_SOURCE_MC);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -595,7 +595,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon MC V ", GEOJSON_SOURCE_MC);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -608,7 +608,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygoN MC SD", GEOJSON_SOURCE_MC);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -623,7 +623,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon MH R", GEOJSON_SOURCE_MH);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -636,7 +636,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon MH A", GEOJSON_SOURCE_MH);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -649,7 +649,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon MH V", GEOJSON_SOURCE_MH);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -663,7 +663,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygoN MH SD", GEOJSON_SOURCE_MH);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -678,7 +678,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon MA R", GEOJSON_SOURCE_MA);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -691,7 +691,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon MA a", GEOJSON_SOURCE_MA);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -704,7 +704,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon MA v", GEOJSON_SOURCE_MA);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -717,7 +717,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygoN Ma SD", GEOJSON_SOURCE_MA);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -732,7 +732,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Tlahuac R ", GEOJSON_SOURCE_Tlahuac);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -745,7 +745,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Tlahuac A", GEOJSON_SOURCE_Tlahuac);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -759,7 +759,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Tlahuac V", GEOJSON_SOURCE_Tlahuac);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -772,7 +772,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Tlahuac SD", GEOJSON_SOURCE_Tlahuac);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -787,7 +787,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Tlalpan V", GEOJSON_SOURCE_Tlalpan);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -800,7 +800,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Tlalpan A", GEOJSON_SOURCE_Tlalpan);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -813,7 +813,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Tlalpan R", GEOJSON_SOURCE_Tlalpan);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -826,7 +826,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Tlalpan SD", GEOJSON_SOURCE_Tlalpan);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -841,7 +841,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon VC R", GEOJSON_SOURCE_VC);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -854,7 +854,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon VC A", GEOJSON_SOURCE_VC);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -867,7 +867,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon VC V", GEOJSON_SOURCE_VC);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -880,7 +880,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon VC SD", GEOJSON_SOURCE_VC);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -895,7 +895,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Xo R", GEOJSON_SOURCE_Xo);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.RED),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -908,7 +908,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Xo A", GEOJSON_SOURCE_Xo);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.YELLOW),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -921,7 +921,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Xo V", GEOJSON_SOURCE_Xo);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.GREEN),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
@@ -934,7 +934,7 @@ public class PoligonosMapa {
         FillLayer countryPolygonFillLayer = new FillLayer("polygon Xo SD", GEOJSON_SOURCE_Xo);
         countryPolygonFillLayer.setProperties(
                 PropertyFactory.fillColor(Color.LTGRAY),
-                PropertyFactory.fillOpacity(.4f));
+                PropertyFactory.fillOpacity(.2f));
         countryPolygonFillLayer.setFilter(eq(literal("$type"), literal("Polygon")));
         loadedMapStyle.addLayer(countryPolygonFillLayer);
 
